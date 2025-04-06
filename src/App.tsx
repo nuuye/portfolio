@@ -168,16 +168,14 @@ function App() {
                                             variant="text"
                                             sx={customPresentationButtonStyle}
                                         >
-                                            Socials skills <br />
-                                            Sociable, dedicated and rigorous
+                                            <span>Socials skills</span>
+                                            <span>Sociable, dedicated and rigorous</span>
                                         </Button>
                                     </div>
                                     <div className="infoContainer">
                                         <IconContainer background="#373743">
                                             <TranslateIcon
                                                 sx={{
-                                                    width: '40',
-                                                    height: '40',
                                                     color: '#2b86ff',
                                                 }}
                                             />
@@ -186,8 +184,10 @@ function App() {
                                             variant="text"
                                             sx={customPresentationButtonStyle}
                                         >
-                                            Languages <br />
-                                            English (toeic 830 ≈ B2), French (fluent)
+                                            <span>Languages</span>
+                                            <span>
+                                                English (toeic 830 ≈ B2), French (fluent)
+                                            </span>
                                         </Button>
                                     </div>
                                 </div>
@@ -205,8 +205,8 @@ function App() {
                                                 variant="text"
                                                 sx={customPresentationButtonStyle}
                                             >
-                                                GitHub <br />
-                                                https://github.com/nuuye
+                                                <span>GitHub</span>
+                                                <span>https://github.com/nuuye</span>
                                             </Button>
                                         </div>
                                     </a>
@@ -225,8 +225,8 @@ function App() {
                                                 variant="text"
                                                 sx={customPresentationButtonStyle}
                                             >
-                                                Location <br />
-                                                Hellemmes, Lille - France
+                                                <span>Location</span>
+                                                <span>Hellemmes, Lille - France</span>
                                             </Button>
                                         </div>
                                     </a>
@@ -664,7 +664,7 @@ function App() {
                                             able to visualize their performance over time
                                             through interactive charts.
                                         </p>
-                                        <p style={{ fontWeight : 'bold' }}>
+                                        <p style={{ fontWeight: 'bold' }}>
                                             This is my current project and a work in
                                             progress — both the design and functionalities
                                             are still evolving and not final yet.

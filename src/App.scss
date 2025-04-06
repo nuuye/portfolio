@@ -78,7 +78,7 @@ body {
     overflow-x: clip;
     .mainContainer {
         display: flex;
-        margin: 50px 50px 30px 50px;
+        margin: 50px 40px 30px 50px;
         background-color: #333231;
         gap: 15px;
         height: 88vh;
@@ -89,11 +89,11 @@ body {
         }
         @media (max-width: 650px) {
             margin-left: 25px;
-            margin-right: 25px;
+            margin-right: 15px;
         }
         @media (max-width: 435px) {
             margin-left: 15px;
-            margin-right: 15px;
+            margin-right: 5px;
         }
 
         .leftContainer {
@@ -148,6 +148,14 @@ body {
                 .infoContainer {
                     display: flex;
                     align-items: center;
+                    :nth-child(2) {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        :nth-child(2) {
+                            color: rgba(255, 255, 255, 0.6784313725);
+                        }
+                    }
                 }
             }
         }
@@ -210,16 +218,16 @@ body {
 
     .secondContainer,
     .fourthContainer {
-        margin: 30px 50px;
+        margin: 30px 40px 30px 50px;
         @extend .container-style;
         flex: 1;
         @media (max-width: 650px) {
             margin-left: 25px;
-            margin-right: 25px;
+            margin-right: 15px;
         }
         @media (max-width: 435px) {
             margin-left: 15px;
-            margin-right: 15px;
+            margin-right: 5px;
         }
         span {
             @extend .title-style;
@@ -474,16 +482,16 @@ body {
         }
     }
     .thirdContainer {
-        margin: 30px 50px;
+        margin: 30px 40px 30px 50px;
         @extend .container-style;
         flex: 1;
         @media (max-width: 650px) {
             margin-left: 25px;
-            margin-right: 25px;
+            margin-right: 15px;
         }
         @media (max-width: 435px) {
             margin-left: 15px;
-            margin-right: 15px;
+            margin-right: 5px;
         }
         .skillsTitle {
             @extend .title-style;
@@ -759,17 +767,17 @@ body {
     }
 
     .fifthContainer {
-        margin: 30px 50px;
+        margin: 30px 40px 30px 50px;
         @extend .container-style;
         flex: 1;
         padding-bottom: 15px;
         @media (max-width: 650px) {
             margin-left: 25px;
-            margin-right: 25px;
+            margin-right: 15px;
         }
         @media (max-width: 435px) {
             margin-left: 15px;
-            margin-right: 15px;
+            margin-right: 5px;
         }
         .contactTitle {
             @extend .title-style;

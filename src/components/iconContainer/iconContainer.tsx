@@ -18,7 +18,7 @@ export default function IconContainer(props: IconContainerProps) {
             <div
                 className="container"
                 style={{
-                    width: size ? size : 40,
+                    minWidth: size ? size : 40,
                     height: size ? size : 40,
                 }}
             >
@@ -28,7 +28,6 @@ export default function IconContainer(props: IconContainerProps) {
                         width: '100%',
                         height: '100%',
                         minWidth: '0',
-                        border: '1px solid #323030',
                         boxShadow:
                             '2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(63, 63, 63, 0.5)',
                         borderRadius: 2,
