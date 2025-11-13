@@ -46,8 +46,8 @@
         flex-direction: column;
         justify-content: center;
 
-        @media (max-width: 1300px) {
-            margin-top: 8px;
+        @media (max-width: 1290px) {
+            margin-top: 12px;
         }
 
         @include desktop {

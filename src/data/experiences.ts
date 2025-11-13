@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
             'One year later, I joined Projex again in order to master React (along with TypeScript), the NextJS framework and manipulate databases.',
             'I also familiarized myself with project management tools such as Jibra or Gitlab.',
         ],
-        duration: '1 + 3 months',
+        duration: '1 + 3,5 months',
         technologies: ['React.js', 'TypeScript', 'SCSS & Ant Design', 'Next.js'],
         orientation: 'left',
     },

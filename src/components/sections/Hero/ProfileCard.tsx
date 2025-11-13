@@ -72,7 +72,7 @@ const ProfileCard: React.FC = () => {
                             </div>
                         </a>
                         <a
-                            href="https://www.google.it/maps/place/Hellemmes-Lille,+Lille/@50.6258822,3.0889245,14z/data=!3m1!4b1!4m6!3m5!1s0x47c2d60fdbd8e5f1:0xe8420a6c3e86c873!8m2!3d50.6312585!4d3.1114773!16s%2Fg%2F11_t9ycrq?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D"
+                            href="https://maps.app.goo.gl/s1pbAcgi2kahd5mQ7"
                             target="_blank"
                             rel="noreferrer"
                         >
@@ -82,7 +82,7 @@ const ProfileCard: React.FC = () => {
                                 </IconContainer>
                                 <Button variant="text" sx={customButtonStyle}>
                                     <span>Location</span>
-                                    <span>Hellemmes, Lille - France</span>
+                                    <span>Paris - France</span>
                                 </Button>
                             </div>
                         </a>

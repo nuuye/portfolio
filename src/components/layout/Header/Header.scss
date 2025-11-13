@@ -12,6 +12,7 @@
     justify-content: flex-end;
     padding: 0 50px;
     transition: top 0.3s;
+    border-bottom: solid 2px #505062;
 
     @media (max-width: $mobile) {
         padding-right: 25px;
