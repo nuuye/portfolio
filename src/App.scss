@@ -243,7 +243,7 @@ body {
             .thirdProjectContainer,
             .fifthProjectContainer {
                 margin: 0px 50px;
-                img {
+                img, video {
                     border-radius: 6px;
                     width: 650px;
                     height: auto;
@@ -460,7 +460,7 @@ body {
             }
             .thirdProjectContainer,
             .fifthProjectContainer {
-                img {
+                img, video {
                     @media (max-width: 730px) {
                         display: none;
                     }

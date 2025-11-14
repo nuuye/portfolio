@@ -31,9 +31,6 @@ import projexMobile from '../src/images/projexMobile.png';
 import mongoDBPicture from '../src/images/mongodb.svg';
 import planyPreview from '../src/images/plany_preview.gif';
 import planyPreviewMobile from '../src/images/plany_preview_mobile.gif';
-import fitlogs from '../src/images/Fitlogs.gif';
-import fitlogsMobile from '../src/images/Fitlogs_mobile.png';
-
 import dominionMobile from '../src/images/dominionMobile.png';
 import obisMobile from '../src/images/obisMobile.gif';
 import nijiPicture from '../src/images/niji_homepage.png';
@@ -639,10 +636,20 @@ function App() {
                     <div className="diviser"></div>
                     <div className="fifthProject">
                         <div className="fifthProjectContainer">
-                            <img src={fitlogs} alt="fitlogsGIF" />
-                            <img
-                                src={fitlogsMobile}
-                                alt="fitlogsGIFMobile"
+                            <video
+                                src="/videos/fitlogsVideo.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="fitlogsDesktop"
+                            />
+                            <video
+                                src="/videos/fitlogsMobileVideo.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
                                 className="fitlogsMobile"
                             />
                         </div>
@@ -650,24 +657,29 @@ function App() {
                             <div className="fifthProjectTextContainer">
                                 <div>
                                     <p>
-                                        FitLogs is a fitness logging application designed
-                                        to help users track their workouts and monitor
-                                        their progress over time.
                                         <p>
-                                            The app allows users to log and manage their
-                                            exercise routines, including details like
-                                            sets, reps, and weights. All workout data is
-                                            securely stored in a MongoDB database, with
-                                            user authentication handled through JWT and
-                                            password hashing using bcrypt for added
-                                            security. In future updates, users will be
-                                            able to visualize their performance over time
-                                            through interactive charts.
+                                            FitLogs is a fitness logging web application
+                                            designed to help users track their workouts
+                                            and monitor their progress over time.
                                         </p>
-                                        <p style={{ fontWeight: 'bold' }}>
-                                            This is my current project and a work in
-                                            progress — both the design and functionalities
-                                            are still evolving and not final yet.
+                                        <p>
+                                            Users can record all their exercises with
+                                            sets, reps and weights, and then visualize
+                                            their performance through interactive charts.
+                                            The app offers a secure login system using
+                                            bcrypt, and also supports Google
+                                            authentification for quicker access.
+                                        </p>
+                                        <p>
+                                            The web-app includes several pages such as the
+                                            landing page, settings, blog, pricing, FAQ, a
+                                            dashboard for entering workout data, and an
+                                            analytics page for tracking overall progress.
+                                        </p>
+                                        <p>
+                                            FitLogs is fully deployed on AWS with Docker,
+                                            using automation scripts to manage container
+                                            startup and environment configuration.
                                         </p>
                                     </p>
                                 </div>
@@ -684,6 +696,19 @@ function App() {
                                     >
                                         <GitHubIcon sx={{ color: '#2b86ff' }} />
                                     </IconContainer>
+                                </a>
+                                <a
+                                    href="https://fitlogs.fr"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <IconLabelButtons
+                                        Color="white"
+                                        Variant="outlined"
+                                        textTransform="none"
+                                    >
+                                        Website link (server off)
+                                    </IconLabelButtons>
                                 </a>
                                 <IconLabelButtons Variant="outlined" textTransform="none">
                                     React
@@ -702,6 +727,15 @@ function App() {
                                 </IconLabelButtons>
                                 <IconLabelButtons Variant="outlined" textTransform="none">
                                     MaterialUI
+                                </IconLabelButtons>
+                                <IconLabelButtons Variant="outlined" textTransform="none">
+                                    AWS
+                                </IconLabelButtons>
+                                <IconLabelButtons Variant="outlined" textTransform="none">
+                                    Bash
+                                </IconLabelButtons>
+                                <IconLabelButtons Variant="outlined" textTransform="none">
+                                    CI/CD
                                 </IconLabelButtons>
                             </div>
                         </div>
