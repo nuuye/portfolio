@@ -1,0 +1,58 @@
+@import '../../../styles/variables';
+
+.header {
+    height: 50px;
+    z-index: 2;
+    background-color: $bg-secondary;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 50px;
+    transition: top 0.3s;
+
+    @media (max-width: $mobile) {
+        padding-right: 25px;
+    }
+
+    @media (max-width: $mobile-small) {
+        padding-right: 15px;
+    }
+
+    &--hidden {
+        top: -60px;
+    }
+
+    &__home-button {
+        position: absolute;
+        left: 15px;
+        top: 8px;
+        background-color: unset;
+        border: unset;
+        cursor: pointer;
+
+        @media (max-width: 450px) {
+            display: none;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        gap: 30px;
+        padding: 10px 0;
+
+        @media (max-width: $mobile) {
+            gap: 10px;
+        }
+
+        @media (max-width: 380px) {
+            gap: 5px;
+        }
+
+        @media (max-width: 360px) {
+            gap: 1px;
+        }
+    }
+}

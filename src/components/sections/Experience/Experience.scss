@@ -1,0 +1,45 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.experience {
+    margin: $spacing-lg 40px $spacing-lg $spacing-xl;
+    @include container-style;
+    flex: 1;
+    padding: 15px;
+
+    @include tablet-small {
+        margin-left: 25px;
+        margin-right: 15px;
+    }
+
+    @media (max-width: 435px) {
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+
+    &__item {
+        padding: 15px 120px 30px 120px;
+
+        @media (max-width: 1375px) {
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        @media (max-width: 1275px) {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        @media (max-width: 435px) {
+            padding: 15px;
+        }
+
+        &--right {
+            // Styles spécifiques pour orientation right si nécessaire
+        }
+
+        &--left {
+            // Styles spécifiques pour orientation left si nécessaire
+        }
+    }
+}
