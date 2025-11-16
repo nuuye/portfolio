@@ -52,7 +52,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
         // Classe spéciale pour la calculatrice
         const imageClass = title.includes('Calculator')
-            ? 'project-card__image calculator-img'
+            ? 'project-card__image calculator-img' //special width
             : 'project-card__image';
 
         // Classe spéciale pour OBIS mobile
