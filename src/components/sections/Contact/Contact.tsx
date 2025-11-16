@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
                     <ContactInfo
                         icon={<PhoneIcon sx={{ color: '#2b86ff' }} />}
                         title="Phone Number"
-                        value="+33(0)7 43 27 40 80"
+                        value="+33(0)7 43 50 96 00"
                     />
                 </div>
             </div>
