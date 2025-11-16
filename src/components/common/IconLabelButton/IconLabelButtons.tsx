@@ -10,12 +10,13 @@ interface IconLabelButtonsProps {
     StartIcon?: boolean;
     Variant?: 'text' | 'outlined' | 'contained';
     size?: 'small' | 'large';
+    bold?: boolean;
     textTransform?: 'uppercase' | 'none' | 'lowercase';
     onClick?: () => void;
 }
 
 export default function IconLabelButtons(props: IconLabelButtonsProps) {
-    const { children, Icon, Color, Variant, StartIcon, size, textTransform, onClick } =
+    const { children, Icon, Color, Variant, StartIcon, size, bold, textTransform, onClick } =
         props;
     return (
         <div>
@@ -27,7 +28,8 @@ export default function IconLabelButtons(props: IconLabelButtonsProps) {
                     borderRadius: 4,
                     textTransform: { textTransform },
                     color: Color ? Color : '#2b86ff',
-                    borderColor: Color ? Color : '#2b86ff'
+                    borderColor: Color ? Color : '#2b86ff',
+                    fontWeight: bold ? 'bold' : 'normal'
                 }}
                 size={size ? size : 'small'}
                 onClick={onClick}

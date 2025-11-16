@@ -64,7 +64,11 @@
     &__detail-item {
         display: flex;
         align-items: center;
-
+        Button {
+            span {
+                font-weight: bold;
+            }
+        }
         > :nth-child(2) {
             display: flex;
             flex-direction: column;

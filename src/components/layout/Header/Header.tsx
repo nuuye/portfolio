@@ -21,24 +21,28 @@ const Header: React.FC = () => {
             <nav className="header__nav">
                 <IconLabelButtons
                     Variant="text"
+                    bold
                     onClick={() => scrollToSection('projectsSection')}
                 >
                     Projects
                 </IconLabelButtons>
                 <IconLabelButtons
                     Variant="text"
+                    bold
                     onClick={() => scrollToSection('skillsSection')}
                 >
                     Skills
                 </IconLabelButtons>
                 <IconLabelButtons
                     Variant="text"
+                    bold
                     onClick={() => scrollToSection('experienceSection')}
                 >
                     Experience
                 </IconLabelButtons>
                 <IconLabelButtons
                     Icon={<ArrowForwardIosRoundedIcon />}
+                    bold
                     onClick={() => scrollToSection('contactSection')}
                 >
                     Contact
