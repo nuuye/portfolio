@@ -188,7 +188,7 @@
         flex-direction: column;
         justify-content: center;
         gap: 5px;
-        &--obis {
+        &__obis {
             display: flex;
             flex-direction: column;
             gap: 13px;
@@ -206,23 +206,24 @@
         }
     }
 
-    &__footer,
     &__tags {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         gap: 5px;
-    }
-
-    &__footer {
-        @media (min-width: 1270px) {
-            display: none;
+        &__aboveDescription {
+            &__fitlogs {
+                @media (max-width: 1270px) {
+                    display: none;
+                }
+            }
         }
-    }
-
-    &__tags {
-        @media (max-width: 1270px) {
-            display: none;
+        &__belowDescription {
+            &__fitlogs {
+                @media (min-width: 1270px) {
+                    display: none;
+                }
+            }
         }
     }
 }

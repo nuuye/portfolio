@@ -70,7 +70,8 @@
     &__content {
         display: flex;
         align-items: flex-start;
-        padding: $spacing-md;
+        padding-top: 10px;
+        padding-left: 10px;
 
         @media (max-width: 540px) {
             max-height: 410px;

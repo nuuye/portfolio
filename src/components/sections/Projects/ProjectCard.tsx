@@ -28,9 +28,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         return title.toLowerCase().includes(keyword.toLocaleLowerCase());
     };
 
-    const renderProjectTags = (footer: boolean) => {
+    const renderProjectTags = (belowDescription: boolean) => {
         return (
-            <div className={`project-card__${footer ? 'footer' : 'tags'}`}>
+            <div
+                className={`project-card__tags ${
+                    belowDescription
+                        ? 'project-card__tags__belowDescription'
+                        : 'project-card__tags__aboveDescription'
+                } ${
+                    isProject('fitlogs')
+                        ? belowDescription
+                            ? 'project-card__tags__belowDescription__fitlogs'
+                            : 'project-card__tags__aboveDescription__fitlogs'
+                        : ''
+                }`}
+            >
                 {githubLink && (
                     <a href={githubLink} target="_blank" rel="noreferrer">
                         <IconContainer background="#383939" tooltip="See the code">
@@ -116,7 +128,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <div className="project-card__media">{renderMedia()}</div>
 
             {/* Content Container */}
-            <div className={`project-card__content${isProject('obis') ? '--obis' : ''}`}>
+            <div className={`project-card__content${isProject('obis') ? '__obis' : ''}`}>
                 <div className="project-card__description">
                     {description.map((paragraph, index) => (
                         <p key={index}>{paragraph}</p>
