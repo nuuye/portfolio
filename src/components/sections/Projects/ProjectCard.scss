@@ -14,9 +14,14 @@
         align-items: flex-start;
         padding: 50px 40px 50px 40px;
 
-        @media (max-width: 1270px) {
-            flex-direction: column;
-            align-items: center;
+        &--dominion,
+        &--obis,
+        &--plany,
+        &--fitlogs {
+            @media (max-width: 1270px) {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         .project-card__content {
@@ -31,6 +36,13 @@
 
         @media (max-width: 920px) {
             padding: 50px 40px;
+        }
+
+        &--calculator {
+            @media (max-width: 785px) {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         @media (max-width: 530px) {

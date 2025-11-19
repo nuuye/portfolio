@@ -11,6 +11,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     const {
+        id,
         title,
         description,
         image,
@@ -123,7 +124,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     };
 
     return (
-        <div className={`project-card project-card--${orientation}`}>
+        <div className={`project-card project-card--${orientation} project-card--${orientation}--${id}`}>
             {/* Media Container */}
             <div className="project-card__media">{renderMedia()}</div>
 
