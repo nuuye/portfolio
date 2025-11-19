@@ -28,6 +28,37 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         return title.toLowerCase().includes(keyword.toLocaleLowerCase());
     };
 
+    const renderProjectTags = () => {
+        return (
+            <div className="project-card__tags">
+                {githubLink && (
+                    <a href={githubLink} target="_blank" rel="noreferrer">
+                        <IconContainer background="#383939" tooltip="See the code">
+                            <GitHubIcon sx={{ color: '#2b86ff' }} />
+                        </IconContainer>
+                    </a>
+                )}
+
+                {websiteLink && (
+                    <a href={websiteLink} target="_blank" rel="noreferrer">
+                        <IconLabelButtons
+                            Color="white"
+                            Variant="outlined"
+                            textTransform="none"
+                        >
+                            {websiteLinkText || 'Website link'}
+                        </IconLabelButtons>
+                    </a>
+                )}
+
+                {technologies.map((tech) => (
+                    <IconLabelButtons key={tech} Variant="outlined" textTransform="none">
+                        {tech}
+                    </IconLabelButtons>
+                ))}
+            </div>
+        );
+    };
     const renderMedia = () => {
         if (videoDesktop) {
             return (
@@ -50,42 +81,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                             className="project-card__video-mobile"
                         />
                     )}
-                    {isProject('fitlogs') && (
-                        <div className="project-card__tags">
-                            {githubLink && (
-                                <a href={githubLink} target="_blank" rel="noreferrer">
-                                    <IconContainer
-                                        background="#383939"
-                                        tooltip="See the code"
-                                    >
-                                        <GitHubIcon sx={{ color: '#2b86ff' }} />
-                                    </IconContainer>
-                                </a>
-                            )}
-
-                            {websiteLink && (
-                                <a href={websiteLink} target="_blank" rel="noreferrer">
-                                    <IconLabelButtons
-                                        Color="white"
-                                        Variant="outlined"
-                                        textTransform="none"
-                                    >
-                                        {websiteLinkText || 'Website link'}
-                                    </IconLabelButtons>
-                                </a>
-                            )}
-
-                            {technologies.map((tech) => (
-                                <IconLabelButtons
-                                    key={tech}
-                                    Variant="outlined"
-                                    textTransform="none"
-                                >
-                                    {tech}
-                                </IconLabelButtons>
-                            ))}
-                        </div>
-                    )}
+                    {isProject('fitlogs') && renderProjectTags()}
                 </>
             );
         }
@@ -127,42 +123,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                     ))}
                 </div>
 
-                {!isProject('fitlogs') && (
-                    <div className="project-card__tags">
-                        {githubLink && (
-                            <a href={githubLink} target="_blank" rel="noreferrer">
-                                <IconContainer
-                                    background="#383939"
-                                    tooltip="See the code"
-                                >
-                                    <GitHubIcon sx={{ color: '#2b86ff' }} />
-                                </IconContainer>
-                            </a>
-                        )}
-
-                        {websiteLink && (
-                            <a href={websiteLink} target="_blank" rel="noreferrer">
-                                <IconLabelButtons
-                                    Color="white"
-                                    Variant="outlined"
-                                    textTransform="none"
-                                >
-                                    {websiteLinkText || 'Website link'}
-                                </IconLabelButtons>
-                            </a>
-                        )}
-
-                        {technologies.map((tech) => (
-                            <IconLabelButtons
-                                key={tech}
-                                Variant="outlined"
-                                textTransform="none"
-                            >
-                                {tech}
-                            </IconLabelButtons>
-                        ))}
-                    </div>
-                )}
+                {!isProject('fitlogs') && renderProjectTags()}
             </div>
         </div>
     );
