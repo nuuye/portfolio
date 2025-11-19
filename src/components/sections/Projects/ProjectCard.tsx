@@ -80,7 +80,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <div className="project-card__media">{renderMedia()}</div>
 
             {/* Content Container */}
-            <div className="project-card__content">
+            <div className={`project-card__content${title.includes('OBIS') && "--obis"}`}>
                 <div className="project-card__description">
                     {description.map((paragraph, index) => (
                         <p key={index}>{paragraph}</p>

@@ -11,6 +11,7 @@
 
     &--left {
         justify-content: flex-start;
+        align-items: flex-start;
         padding: 50px 40px 50px 100px;
 
         @media (max-width: 1270px) {
@@ -22,6 +23,11 @@
         .project-card__content {
             @media (max-width: 1270px) {
                 align-items: center;
+            }
+            &--obis {
+                display: flex;
+                flex-direction: column;
+                gap: 13px;
             }
         }
 
@@ -44,7 +50,6 @@
 
     &--right {
         flex-direction: row-reverse;
-        align-items: center;
         padding: 50px 100px 50px 40px;
 
         @media (max-width: 1270px) {
