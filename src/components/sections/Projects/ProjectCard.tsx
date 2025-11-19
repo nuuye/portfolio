@@ -24,6 +24,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         orientation,
     } = project;
 
+    const isProject = (keyword: string) => {
+        return title.toLowerCase().includes(keyword.toLocaleLowerCase());
+    };
+
     const renderMedia = () => {
         if (videoDesktop) {
             return (
@@ -46,17 +50,53 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                             className="project-card__video-mobile"
                         />
                     )}
+                    {isProject('fitlogs') && (
+                        <div className="project-card__tags">
+                            {githubLink && (
+                                <a href={githubLink} target="_blank" rel="noreferrer">
+                                    <IconContainer
+                                        background="#383939"
+                                        tooltip="See the code"
+                                    >
+                                        <GitHubIcon sx={{ color: '#2b86ff' }} />
+                                    </IconContainer>
+                                </a>
+                            )}
+
+                            {websiteLink && (
+                                <a href={websiteLink} target="_blank" rel="noreferrer">
+                                    <IconLabelButtons
+                                        Color="white"
+                                        Variant="outlined"
+                                        textTransform="none"
+                                    >
+                                        {websiteLinkText || 'Website link'}
+                                    </IconLabelButtons>
+                                </a>
+                            )}
+
+                            {technologies.map((tech) => (
+                                <IconLabelButtons
+                                    key={tech}
+                                    Variant="outlined"
+                                    textTransform="none"
+                                >
+                                    {tech}
+                                </IconLabelButtons>
+                            ))}
+                        </div>
+                    )}
                 </>
             );
         }
 
         // Classe spéciale pour la calculatrice
-        const imageClass = title.includes('Calculator')
+        const imageClass = isProject('calculator')
             ? 'project-card__image calculator-img' //special width
             : 'project-card__image';
 
         // Classe spéciale pour OBIS mobile
-        const mobileImageClass = title.includes('OBIS')
+        const mobileImageClass = isProject('obis')
             ? 'project-card__image-mobile obis-mobile'
             : 'project-card__image-mobile';
 
@@ -80,44 +120,49 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <div className="project-card__media">{renderMedia()}</div>
 
             {/* Content Container */}
-            <div className={`project-card__content${title.includes('OBIS') && "--obis"}`}>
+            <div className={`project-card__content${isProject('obis') && '--obis'}`}>
                 <div className="project-card__description">
                     {description.map((paragraph, index) => (
                         <p key={index}>{paragraph}</p>
                     ))}
                 </div>
 
-                <div className="project-card__footer">
-                    {githubLink && (
-                        <a href={githubLink} target="_blank" rel="noreferrer">
-                            <IconContainer background="#383939" tooltip="See the code">
-                                <GitHubIcon sx={{ color: '#2b86ff' }} />
-                            </IconContainer>
-                        </a>
-                    )}
+                {!isProject('fitlogs') && (
+                    <div className="project-card__tags">
+                        {githubLink && (
+                            <a href={githubLink} target="_blank" rel="noreferrer">
+                                <IconContainer
+                                    background="#383939"
+                                    tooltip="See the code"
+                                >
+                                    <GitHubIcon sx={{ color: '#2b86ff' }} />
+                                </IconContainer>
+                            </a>
+                        )}
 
-                    {websiteLink && (
-                        <a href={websiteLink} target="_blank" rel="noreferrer">
+                        {websiteLink && (
+                            <a href={websiteLink} target="_blank" rel="noreferrer">
+                                <IconLabelButtons
+                                    Color="white"
+                                    Variant="outlined"
+                                    textTransform="none"
+                                >
+                                    {websiteLinkText || 'Website link'}
+                                </IconLabelButtons>
+                            </a>
+                        )}
+
+                        {technologies.map((tech) => (
                             <IconLabelButtons
-                                Color="white"
+                                key={tech}
                                 Variant="outlined"
                                 textTransform="none"
                             >
-                                {websiteLinkText || 'Website link'}
+                                {tech}
                             </IconLabelButtons>
-                        </a>
-                    )}
-
-                    {technologies.map((tech) => (
-                        <IconLabelButtons
-                            key={tech}
-                            Variant="outlined"
-                            textTransform="none"
-                        >
-                            {tech}
-                        </IconLabelButtons>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     );
