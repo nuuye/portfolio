@@ -23,6 +23,20 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
         <div className={`experience-card experience-card--${orientation}`}>
             {/* Image & Company Info Container */}
             <div className="experience-card__header">
+                <div className="experience-card__company-info">
+                    <span className="experience-card__company-name">{company}</span>
+                    <span className="experience-card__role">{role}</span>
+                </div>
+            </div>
+
+            {/* Content Container */}
+            <div className="experience-card__body">
+                <div className="experience-card__description">
+                    {description.map((paragraph: any, index: any) => (
+                        <p key={index}>{paragraph}</p>
+                    ))}
+                </div>
+
                 <div className="experience-card__image-wrapper">
                     <img
                         src={image}
@@ -37,39 +51,18 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
                         />
                     )}
                 </div>
-                <div className="experience-card__company-info">
-                    <span className="experience-card__company-name">{company}</span>
-                    <span className="experience-card__role">{role}</span>
-                </div>
             </div>
+            
+            <div className="experience-card__footer">
+                <IconLabelButtons Variant="outlined" textTransform="none" Color="white">
+                    {duration}
+                </IconLabelButtons>
 
-            {/* Content Container */}
-            <div className="experience-card__content">
-                <div className="experience-card__description">
-                    {description.map((paragraph: any, index: any) => (
-                        <p key={index}>{paragraph}</p>
-                    ))}
-                </div>
-
-                <div className="experience-card__footer">
-                    <IconLabelButtons
-                        Variant="outlined"
-                        textTransform="none"
-                        Color="white"
-                    >
-                        {duration}
+                {technologies.map((tech: any) => (
+                    <IconLabelButtons key={tech} Variant="outlined" textTransform="none">
+                        {tech}
                     </IconLabelButtons>
-
-                    {technologies.map((tech: any) => (
-                        <IconLabelButtons
-                            key={tech}
-                            Variant="outlined"
-                            textTransform="none"
-                        >
-                            {tech}
-                        </IconLabelButtons>
-                    ))}
-                </div>
+                ))}
             </div>
         </div>
     );

@@ -3,8 +3,8 @@
 
 .experience-card {
     display: flex;
-    align-items: flex-end;
-    gap: 30px;
+    flex-direction: column;
+    gap: 10px;
 
     @include desktop-small {
         flex-direction: column;
@@ -12,8 +12,6 @@
     }
 
     &--left {
-        flex-direction: row;
-
         @include desktop-small {
             flex-direction: column;
         }
@@ -44,8 +42,6 @@
     }
 
     &--right {
-        flex-direction: row-reverse;
-
         @include desktop-small {
             flex-direction: column;
         }
@@ -63,6 +59,10 @@
             }
         }
 
+        .experience-card__body {
+            flex-direction: row-reverse;
+        }
+
         .experience-card__company-info {
             align-items: flex-end;
 
@@ -78,6 +78,10 @@
                     justify-content: center;
                 }
             }
+        }
+
+        .experience-card__footer {
+            justify-content: flex-end;
         }
     }
 
@@ -158,10 +162,9 @@
         font-family: $font-primary;
     }
 
-    &__content {
+    &__body {
         display: flex;
-        flex-direction: column;
-
+        gap: 30px;
         @include desktop-small {
             align-items: center;
         }
@@ -170,10 +173,12 @@
     &__description {
         @include container-style;
         background-color: $bg-tertiary;
-        padding: $spacing-md;
-
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         p {
             color: $grey-text;
+            padding: 0px 15px;
         }
     }
 
