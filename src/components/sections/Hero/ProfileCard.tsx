@@ -30,7 +30,7 @@ const ProfileCard: React.FC = () => {
             <div className="profile-card__info">
                 <span>Thomas Mostowfi</span>
                 <span>Computer science engineer</span>
-                <span>24 years old</span>
+                <span>25 years old</span>
             </div>
 
             <div className="profile-card__details">
