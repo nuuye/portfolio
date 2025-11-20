@@ -75,22 +75,30 @@
         img,
         video {
             border-radius: $radius-md;
-            width: 650px;
+            width: 625px;
             height: auto;
 
-            @media (max-width: 800px) {
-                width: 500px;
+            @media (max-width: 850px) {
+                width: 100%;
             }
 
-            @include tablet-small {
-                width: 450px;
+            @media (max-width: 730px) {
+                width: 400px;
+            }
+
+            @media (max-width: 650px) {
+                width: 375px;
             }
 
             @media (max-width: 535px) {
-                width: 400px;
+                width: 375px;
+            }
+
+            @media (max-width: 480px) {
+                width: 325px;
             }
         }
-        
+
         .project-card__image {
             @media (max-width: 730px) {
                 display: none;
@@ -99,7 +107,7 @@
             @media (max-width: 600px) {
                 display: none;
             }
-            
+
             //overwriting default settings
             &.calculator-img {
                 width: unset;
@@ -115,55 +123,25 @@
                 display: none;
             }
 
-            @media (min-width: 600px) {
-                display: none;
-            }
-
             @media (max-width: 730px) {
                 display: unset;
             }
 
-            @media (max-width: 600px) {
-                display: unset;
-                height: 650px;
-                width: auto;
-            }
-
-            @media (max-width: 565px) {
-                height: 600px;
-            }
-
-            @media (max-width: 525px) {
-                height: 550px;
-            }
-
-            @media (max-width: 450px) {
-                height: 470px;
-            }
-
             &.obis-mobile {
-                @media (max-width: 730px) {
-                    height: 485px;
-                }
-
-                @media (max-width: 665px) {
-                    height: 435px;
-                }
-
                 @media (max-width: 565px) {
-                    height: 380px;
+                    width: 380px;
                 }
 
                 @media (max-width: 500px) {
-                    height: 330px;
+                    width: 330px;
                 }
 
                 @media (max-width: 385px) {
-                    height: 290px;
+                    width: 290px;
                 }
 
                 @media (max-width: 345px) {
-                    height: 250px;
+                    width: 250px;
                 }
             }
         }
@@ -183,20 +161,6 @@
 
             @media (max-width: 730px) {
                 display: unset;
-                height: 550px;
-                width: auto;
-            }
-
-            @media (max-width: 400px) {
-                height: 470px;
-            }
-
-            @media (max-width: 360px) {
-                height: 440px;
-            }
-
-            @media (max-width: 330px) {
-                height: 420px;
             }
         }
     }
@@ -228,6 +192,10 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        @media (max-width: 1270px) {
+            justify-content: center;
+        }
+
         gap: 5px;
         &__aboveDescription {
             &__fitlogs {
