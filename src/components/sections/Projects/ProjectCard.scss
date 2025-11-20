@@ -71,6 +71,7 @@
     }
 
     &__media {
+        //default settings for img,video
         img,
         video {
             border-radius: $radius-md;
@@ -89,7 +90,7 @@
                 width: 400px;
             }
         }
-
+        
         .project-card__image {
             @media (max-width: 730px) {
                 display: none;
@@ -98,9 +99,14 @@
             @media (max-width: 600px) {
                 display: none;
             }
-
+            
+            //overwriting default settings
             &.calculator-img {
-                width: 250px;
+                width: unset;
+                display: block;
+                @media (max-width: 810px) {
+                    width: 250px;
+                }
             }
         }
 

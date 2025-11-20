@@ -5,168 +5,118 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
 
-    @include desktop-small {
-        flex-direction: column;
-        align-items: unset;
-    }
-
+    // Orientations pour desktop
     &--left {
-        @include desktop-small {
-            flex-direction: column;
-        }
-
         .experience-card__header {
             align-items: flex-start;
-
-            @include desktop-small {
-                align-items: flex-end;
-                flex-direction: row;
-            }
-
-            @include desktop-small {
-                align-items: center;
-                flex-direction: column-reverse;
-            }
         }
 
         .experience-card__company-info {
-            span {
-                justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+        }
 
-                @include desktop-small {
-                    justify-content: center;
-                }
+        .experience-card__body {
+            flex-direction: row;
+        }
+
+        .experience-card__footer {
+            justify-content: flex-start;
+        }
+
+        // Tablet et en dessous : centrer tout
+        @include tablet {
+            .experience-card__header,
+            .experience-card__company-info {
+                align-items: center;
+                text-align: center;
+            }
+
+            .experience-card__body {
+                flex-direction: column;
+            }
+
+            .experience-card__footer {
+                justify-content: center;
             }
         }
     }
 
     &--right {
-        @include desktop-small {
-            flex-direction: column;
-        }
-
         .experience-card__header {
             align-items: flex-end;
+        }
 
-            @include desktop-small {
-                flex-direction: row-reverse;
-            }
-
-            @include desktop-small {
-                align-items: center;
-                flex-direction: column-reverse;
-            }
+        .experience-card__company-info {
+            align-items: flex-end;
+            text-align: right;
         }
 
         .experience-card__body {
             flex-direction: row-reverse;
         }
 
-        .experience-card__company-info {
-            align-items: flex-end;
+        .experience-card__footer {
+            justify-content: flex-end;
+        }
 
-            @include desktop-small {
+        // Tablet et en dessous : centrer tout
+        @include tablet {
+            .experience-card__header,
+            .experience-card__company-info {
                 align-items: center;
                 text-align: center;
             }
 
-            span {
-                justify-content: flex-end;
-
-                @include desktop-small {
-                    justify-content: center;
-                }
+            .experience-card__body {
+                flex-direction: column;
             }
-        }
 
-        .experience-card__footer {
-            justify-content: flex-end;
+            .experience-card__footer {
+                justify-content: center;
+            }
         }
     }
 
+    // Header
     &__header {
         display: flex;
         flex-direction: column-reverse;
         gap: 5px;
     }
 
-    &__image-wrapper {
-        img {
-            border-radius: $radius-md;
-            border: 1px solid $border-color;
-            width: 485px;
-            height: auto;
-
-            @include tablet-small {
-                width: 450px;
-            }
-
-            @include mobile {
-                width: 400px;
-            }
-
-            @media (max-width: 600px) {
-                display: none;
-            }
-        }
-    }
-
-    &__image-mobile {
-        border-radius: $radius-md;
-
-        @media (min-width: 600px) {
-            display: none;
-        }
-
-        @media (max-width: 600px) {
-            display: unset;
-            height: 500px;
-            width: auto;
-        }
-
-        @media (max-width: 400px) {
-            height: 450px;
-        }
-
-        @media (max-width: 370px) {
-            height: 350px;
-        }
-    }
-
     &__company-info {
         display: flex;
         flex-direction: column;
-
-        span {
-            display: flex;
-
-            @media (max-width: 560px) {
-                text-align: center;
-            }
-        }
+        gap: 2px;
     }
 
     &__company-name {
-        padding: 0;
-        font-size: xx-large;
+        font-size: clamp(1.5rem, 4vw, 2rem);
         color: $grey-text;
         font-family: $font-primary;
+        line-height: 1.2;
     }
 
     &__role {
-        padding: 0;
-        font-size: medium;
-        margin-bottom: 5px;
+        font-size: clamp(0.875rem, 2vw, 1rem);
         color: $grey-text;
         font-family: $font-primary;
+        margin-bottom: 5px;
     }
 
+    // Body
     &__body {
         display: flex;
         gap: 30px;
-        @include desktop-small {
+        align-items: flex-start;
+
+        @include tablet {
+            flex-direction: column;
             align-items: center;
+            gap: 20px;
         }
     }
 
@@ -176,16 +126,82 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        flex: 1;
+        min-width: 0; // Permet au flex item de se rétrécir
+
         p {
             color: $grey-text;
             padding: 0px 15px;
+
+            @include mobile {
+                padding: 0px 10px;
+            }
         }
     }
 
+    // Images
+    &__image-wrapper {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    &__image {
+        border-radius: $radius-md;
+        border: 1px solid $border-color;
+        width: 100%;
+        max-width: 485px;
+        height: auto;
+        object-fit: cover;
+
+        @include desktop-small {
+            max-width: 420px;
+        }
+
+        @include tablet {
+            max-width: 100%;
+        }
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__image-mobile {
+        display: none;
+        border-radius: $radius-md;
+        border: 1px solid $border-color;
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+
+        @include mobile {
+            display: block;
+            max-height: 450px;
+        }
+
+        @media (max-width: 400px) {
+            max-height: 400px;
+        }
+
+        @media (max-width: 370px) {
+            max-height: 350px;
+        }
+    }
+
+    // Footer
     &__footer {
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
+        gap: 8px;
         margin-top: 10px;
+
+        @include mobile {
+            gap: 6px;
+            justify-content: center;
+        }
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import './styles/global.scss'
 import Header from './components/layout/Header/Header';
 import Footer from './components/layout/Footer/Footer';
 import Hero from './components/sections/Hero/Hero';
