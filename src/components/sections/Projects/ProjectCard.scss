@@ -12,8 +12,10 @@
     &--left {
         justify-content: flex-start;
         align-items: flex-start;
-        padding: 50px 40px 50px 40px;
-
+        padding: 50px 100px 50px 40px;
+        &--calculator {
+            align-items: center;
+        }
         &--dominion,
         &--obis,
         &--plany,
@@ -192,13 +194,14 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        @media (max-width: 1270px) {
-            justify-content: center;
-        }
-
+        justify-content: center;
         gap: 5px;
+
         &__aboveDescription {
             &__fitlogs {
+                @media (min-width: 1425px) {
+                    display: none;
+                }
                 @media (max-width: 1270px) {
                     display: none;
                 }
@@ -206,8 +209,11 @@
         }
         &__belowDescription {
             &__fitlogs {
-                @media (min-width: 1270px) {
+                @media (max-width: 1425px) {
                     display: none;
+                }
+                @media (max-width: 1270px) {
+                    display: inline-flex;
                 }
             }
         }
