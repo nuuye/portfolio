@@ -65,7 +65,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 )}
 
                 {technologies.map((tech) => (
-                    <IconLabelButtons key={tech} Variant="outlined" textTransform="none">
+                    <IconLabelButtons
+                        className={`tags--${id}--${tech.toLocaleLowerCase().replace(/[^a-zA-Z0-9]/g, '')}`}
+                        key={tech}
+                        Variant="outlined"
+                        textTransform="none"
+                    >
                         {tech}
                     </IconLabelButtons>
                 ))}
@@ -124,7 +129,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     };
 
     return (
-        <div className={`project-card project-card--${orientation} project-card--${orientation}--${id}`}>
+        <div
+            className={`project-card project-card--${orientation} project-card--${orientation}--${id}`}
+        >
             {/* Media Container */}
             <div className="project-card__media">{renderMedia()}</div>
 
