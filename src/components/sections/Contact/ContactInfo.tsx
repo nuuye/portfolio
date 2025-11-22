@@ -2,9 +2,6 @@ import React, { ReactNode, useState } from 'react';
 import Button from '@mui/material/Button';
 import IconContainer from '../../common/IconContainer/IconContainer';
 import './ContactInfo.scss';
-import IconButton from '@mui/material/IconButton';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import CheckIcon from '@mui/icons-material/Check';
 import { Tooltip } from '@mui/material';
 
 interface ContactInfoProps {
