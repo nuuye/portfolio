@@ -1,0 +1,12 @@
+@import '../../../styles/variables';
+
+.contact-info {
+    Button {
+        :nth-child(1) {
+            font-weight: bold;
+        }
+        :nth-child(2) {
+            color: $grey-text;
+        }
+    }
+}
