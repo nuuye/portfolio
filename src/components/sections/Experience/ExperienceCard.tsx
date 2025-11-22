@@ -9,6 +9,7 @@ interface ExperienceCardProps {
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
     const {
+        id,
         company,
         role,
         image,
@@ -30,7 +31,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
             </div>
 
             {/* Content Container */}
-            <div className="experience-card__body">
+            <div className={`experience-card__body experience-card__body--${id}`}>
                 <div className="experience-card__description">
                     {description.map((paragraph: any, index: any) => (
                         <p key={index}>{paragraph}</p>

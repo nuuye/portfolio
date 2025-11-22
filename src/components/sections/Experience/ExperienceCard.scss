@@ -6,7 +6,9 @@
     flex-direction: column;
     gap: 10px;
     width: 100%;
-
+    @media (min-width: 1430px) {
+        gap: unset;
+    }
     // Orientations pour desktop
     &--left {
         .experience-card__header {
@@ -27,7 +29,7 @@
         }
 
         // Tablet et en dessous : centrer tout
-        @include tablet {
+        @media (max-width: 1000px) {
             .experience-card__header,
             .experience-card__company-info {
                 align-items: center;
@@ -63,7 +65,7 @@
         }
 
         // Tablet et en dessous : centrer tout
-        @include tablet {
+        @media (max-width: 1000px) {
             .experience-card__header,
             .experience-card__company-info {
                 align-items: center;
@@ -111,9 +113,15 @@
     &__body {
         display: flex;
         gap: 30px;
-        align-items: flex-start;
+        //align-items: flex-start;
 
-        @include tablet {
+        &--projex, &--niji {
+            @media (max-width: 1100px) {
+                align-items: flex-end;
+            }
+        }
+
+        @media (max-width: 1000px) {
             flex-direction: column;
             align-items: center;
             gap: 20px;
@@ -157,10 +165,10 @@
         object-fit: cover;
 
         @include desktop-small {
-            max-width: 420px;
+            max-width: 430px;
         }
 
-        @include tablet {
+        @media (max-width: 1000px) {
             max-width: 100%;
         }
 
@@ -197,8 +205,10 @@
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        margin-top: 10px;
-
+        margin-top: 13px;
+        // @media (min-width: 1430px) {
+        //     margin-top: unset;
+        // }
         @include mobile {
             gap: 6px;
             justify-content: center;
