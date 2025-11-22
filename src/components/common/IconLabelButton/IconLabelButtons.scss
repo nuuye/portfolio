@@ -4,10 +4,16 @@
             @media (max-width: 610px) {
                 margin-top: 14px !important;
             }
+            @media (max-width: 499px) {
+                margin-top: unset !important;
+            }
         }
         &--bash {
             @media (max-width: 592px) {
                 margin-top: 14px !important;
+            }
+            @media (max-width: 499px) {
+                margin-top: unset !important;
             }
         }
     }

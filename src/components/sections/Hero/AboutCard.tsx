@@ -19,11 +19,11 @@ const AboutCard: React.FC = () => {
 
             <div className="about-card__presentation">
                 <p>
-                    👋 Hello, I'm Thomas Mostowfi. I recently graduated from Polytech
-                    Paris-Saclay with a degree in computer science.
+                    👋 Hello, I'm Thomas Mostowfi and I am currently working at Advanced
+                    Schema as a Software Engineer.
                 </p>
                 <p>
-                    I am now actively seeking new opportunities, with a strong interest in
+                    Open to new opportunities, with a strong interest in
                     development and cybersecurity. My background in web development and
                     recent experience in software development provide a solid foundation,
                     and I'm eager to apply my skills to real world challenges.
