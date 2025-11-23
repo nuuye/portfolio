@@ -1,0 +1,65 @@
+@import './variables';
+@import './mixins';
+
+// Global resets et styles de base
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: $font-primary;
+    background-color: $bg-primary;
+    color: $grey-text;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+// Liens
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $blue-primary;
+    }
+}
+
+// Boutons
+button {
+    cursor: pointer;
+    font-family: $font-primary;
+    border: none;
+    outline: none;
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+p {
+    font-size: clamp(0.975rem, 2vw, 1.1rem);
+    line-height: 1.4;
+}
+
+// Utilitaires
+.text-center {
+    text-align: center;
+}
+
+.flex-center {
+    @include flex-center;
+}
+
+.flex-column {
+    @include flex-column;
+}

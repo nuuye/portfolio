@@ -1,0 +1,80 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.profile-card {
+    @include container-style;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+
+    &__photo {
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+
+    &__photo-wrapper {
+        border-radius: 85px;
+        border: 1px solid $border-color;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(44, 44, 44, 0.5);
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+
+        span {
+            color: $grey-text;
+            font-size: large;
+            font-family: $font-primary;
+
+            @include desktop-large {
+                font-size: 17px;
+            }
+        }
+    }
+
+    &__details {
+        flex: 2;
+        margin: 0 15px 15px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width: 1290px) {
+            margin-top: 12px;
+        }
+
+        @include desktop {
+            flex-direction: row;
+        }
+    }
+
+    &__details-grid {
+        @media (min-width: 680px) {
+            display: contents;
+        }
+    }
+
+    &__detail-item {
+        display: flex;
+        align-items: center;
+
+        Button {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            > :nth-child(1) {
+                font-weight: bold;
+            }
+            > :nth-child(2) {
+                color: $grey-text-light;
+            }
+        }
+    }
+}

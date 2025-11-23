@@ -1,0 +1,221 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.project-card {
+    display: flex;
+    gap: 30px;
+
+    @media (max-width: 1270px) {
+        align-items: center;
+    }
+
+    &--left {
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 50px 100px 50px 40px;
+        &--calculator {
+            align-items: center;
+        }
+        &--dominion,
+        &--obis,
+        &--plany,
+        &--fitlogs {
+            @media (max-width: 1270px) {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .project-card__content {
+            @media (max-width: 1270px) {
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            padding: 50px 80px;
+        }
+
+        @media (max-width: 920px) {
+            padding: 50px 40px;
+        }
+
+        &--calculator {
+            @media (max-width: 785px) {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 530px) {
+            padding: 25px;
+        }
+
+        @media (max-width: 435px) {
+            padding: 15px;
+        }
+    }
+
+    &--right {
+        flex-direction: row-reverse;
+        padding: 50px 100px 50px 40px;
+
+        @media (max-width: 1270px) {
+            flex-direction: column;
+            padding-right: 40px;
+        }
+
+        .project-card__content {
+            @media (max-width: 1270px) {
+                align-items: center;
+            }
+        }
+    }
+
+    &__media {
+        //default settings for img,video
+        img,
+        video {
+            border-radius: $radius-md;
+            width: 625px;
+            height: auto;
+
+            @media (max-width: 850px) {
+                width: 100%;
+            }
+
+            @media (max-width: 730px) {
+                width: 400px;
+            }
+
+            @media (max-width: 650px) {
+                width: 375px;
+            }
+
+            @media (max-width: 535px) {
+                width: 375px;
+            }
+
+            @media (max-width: 480px) {
+                width: 325px;
+            }
+        }
+
+        .project-card__image {
+            @media (max-width: 730px) {
+                display: none;
+            }
+
+            @media (max-width: 600px) {
+                display: none;
+            }
+
+            //overwriting default settings
+            &.calculator-img {
+                width: unset;
+                display: block;
+                @media (max-width: 810px) {
+                    width: 250px;
+                }
+            }
+        }
+
+        .project-card__image-mobile {
+            @media (min-width: 730px) {
+                display: none;
+            }
+
+            @media (max-width: 730px) {
+                display: unset;
+            }
+
+            &.obis-mobile {
+                @media (max-width: 565px) {
+                    width: 380px;
+                }
+
+                @media (max-width: 500px) {
+                    width: 330px;
+                }
+
+                @media (max-width: 385px) {
+                    width: 290px;
+                }
+
+                @media (max-width: 345px) {
+                    width: 250px;
+                }
+            }
+        }
+
+        .project-card__video-desktop {
+            @media (max-width: 730px) {
+                display: none;
+            }
+        }
+
+        .project-card__video-mobile {
+            border-radius: $radius-md;
+
+            @media (min-width: 730px) {
+                display: none;
+            }
+
+            @media (max-width: 730px) {
+                display: unset;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        &__obis {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+            align-items: center;
+        }
+    }
+
+    &__description {
+        padding: 0px 15px;
+        @include container-style;
+        background-color: $bg-tertiary;
+
+        p {
+            color: $grey-text;
+        }
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        &__aboveDescription {
+            &__fitlogs {
+                @media (min-width: 1425px) {
+                    display: none;
+                }
+                @media (max-width: 1270px) {
+                    display: none;
+                }
+            }
+        }
+        &__belowDescription {
+            &__fitlogs {
+                @media (max-width: 1425px) {
+                    display: none;
+                }
+                @media (max-width: 1270px) {
+                    display: inline-flex;
+                }
+            }
+        }
+    }
+}

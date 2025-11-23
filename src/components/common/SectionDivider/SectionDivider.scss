@@ -1,0 +1,9 @@
+@import '../../../styles/variables';
+
+.section-divider {
+    border: 1px solid $border-color;
+    height: 10px;
+    margin: 0 20px;
+    border-radius: 5px;
+    background-color: $border-color;
+}

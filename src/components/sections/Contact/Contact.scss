@@ -1,0 +1,47 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.contact {
+    margin: $spacing-lg 40px $spacing-lg $spacing-xl;
+    @include container-style;
+    flex: 1;
+    padding: 15px;
+
+    @include tablet-small {
+        margin-left: 25px;
+        margin-right: 15px;
+    }
+
+    @media (max-width: 500px) {
+        padding-bottom: 0px;
+    }
+
+    @media (max-width: 435px) {
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+
+    &__wrapper {
+        @media (max-width: 700px) {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+
+        @media (max-width: 700px) {
+            flex-direction: column;
+            gap: unset;
+        }
+    }
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+}

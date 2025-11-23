@@ -1,0 +1,96 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.skills {
+    margin: $spacing-lg 40px $spacing-lg $spacing-xl;
+    @include container-style;
+    flex: 1;
+    padding: 15px;
+    @include tablet-small {
+        margin-left: 25px;
+        margin-right: 15px;
+    }
+
+    @media (max-width: 435px) {
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+
+    &__container {
+        @include container-style;
+        border-left: unset;
+        margin: $spacing-lg 200px;
+        display: flex;
+
+        @media (max-width: 1030px) {
+            margin: $spacing-lg 100px;
+        }
+
+        @media (max-width: 830px) {
+            margin: $spacing-lg $spacing-xl;
+        }
+
+        @media (max-width: 465px) {
+            margin: $spacing-lg $spacing-md;
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__tab {
+        @include container-style;
+        padding: $spacing-xl;
+        color: $grey-text;
+        cursor: pointer;
+        border-right: 2px solid $border-color;
+
+        @media (max-width: 865px) {
+            padding: 55px;
+        }
+
+        @media (max-width: 540px) {
+            padding: 35px;
+        }
+
+        &--active {
+            box-shadow: none;
+            border: 2px solid $border-color;
+            border-right: none;
+            border-top: 1px solid $border-color;
+
+            &:first-child {
+                border-top: 2px solid $border-color;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 10px;
+        padding-left: 10px;
+
+        @media (max-width: 540px) {
+            max-height: 410px;
+            overflow: auto;
+            overflow-x: hidden;
+        }
+
+        @media (max-width: 659px) {
+            &.frontend-content {
+                max-height: 430px;
+                overflow: auto;
+                overflow-x: hidden;
+            }
+        }
+    }
+
+    &__icons {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}

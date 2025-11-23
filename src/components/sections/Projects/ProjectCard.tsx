@@ -1,0 +1,152 @@
+import React from 'react';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import IconContainer from '../../common/IconContainer/IconContainer';
+import IconLabelButtons from '../../common/IconLabelButton/IconLabelButtons';
+import { Project } from '../../../types/project.types';
+import './ProjectCard.scss';
+
+interface ProjectCardProps {
+    project: Project;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+    const {
+        id,
+        title,
+        description,
+        image,
+        mobileImage,
+        videoDesktop,
+        videoMobile,
+        githubLink,
+        websiteLink,
+        websiteLinkText,
+        technologies,
+        orientation,
+    } = project;
+
+    const isProject = (keyword: string) => {
+        return title.toLowerCase().includes(keyword.toLocaleLowerCase());
+    };
+
+    const renderProjectTags = (belowDescription: boolean) => {
+        return (
+            <div
+                className={`project-card__tags ${
+                    belowDescription
+                        ? 'project-card__tags__belowDescription'
+                        : 'project-card__tags__aboveDescription'
+                } ${
+                    isProject('fitlogs')
+                        ? belowDescription
+                            ? 'project-card__tags__belowDescription__fitlogs'
+                            : 'project-card__tags__aboveDescription__fitlogs'
+                        : ''
+                }`}
+            >
+                {githubLink && (
+                    <a href={githubLink} target="_blank" rel="noreferrer">
+                        <IconContainer background="#383939" tooltip="See the code">
+                            <GitHubIcon sx={{ color: '#2b86ff' }} />
+                        </IconContainer>
+                    </a>
+                )}
+
+                {websiteLink && (
+                    <a href={websiteLink} target="_blank" rel="noreferrer">
+                        <IconLabelButtons
+                            Color="white"
+                            Variant="outlined"
+                            textTransform="none"
+                        >
+                            {websiteLinkText || 'Website link'}
+                        </IconLabelButtons>
+                    </a>
+                )}
+
+                {technologies.map((tech) => (
+                    <IconLabelButtons
+                        className={`tags--${id}--${tech.toLocaleLowerCase().replace(/[^a-zA-Z0-9]/g, '')}`}
+                        key={tech}
+                        Variant="outlined"
+                        textTransform="none"
+                    >
+                        {tech}
+                    </IconLabelButtons>
+                ))}
+            </div>
+        );
+    };
+    const renderMedia = () => {
+        if (videoDesktop) {
+            return (
+                <>
+                    <video
+                        src={videoDesktop}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="project-card__video-desktop"
+                    />
+                    {videoMobile && (
+                        <video
+                            src={videoMobile}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="project-card__video-mobile"
+                        />
+                    )}
+                    {isProject('fitlogs') && renderProjectTags(false)}
+                </>
+            );
+        }
+
+        // Classe spéciale pour la calculatrice
+        const imageClass = isProject('calculator')
+            ? 'project-card__image calculator-img' //special width
+            : 'project-card__image';
+
+        // Classe spéciale pour OBIS mobile
+        const mobileImageClass = isProject('obis')
+            ? 'project-card__image-mobile obis-mobile'
+            : 'project-card__image-mobile';
+
+        return (
+            <>
+                <img src={image} alt={`${title} preview`} className={imageClass} />
+                {mobileImage && (
+                    <img
+                        src={mobileImage}
+                        alt={`${title} mobile preview`}
+                        className={mobileImageClass}
+                    />
+                )}
+            </>
+        );
+    };
+
+    return (
+        <div
+            className={`project-card project-card--${orientation} project-card--${orientation}--${id}`}
+        >
+            {/* Media Container */}
+            <div className="project-card__media">{renderMedia()}</div>
+
+            {/* Content Container */}
+            <div className={`project-card__content${isProject('obis') ? '__obis' : ''}`}>
+                <div className="project-card__description">
+                    {description.map((paragraph, index) => (
+                        <p key={index}>{paragraph}</p>
+                    ))}
+                </div>
+
+                {renderProjectTags(true)}
+            </div>
+        </div>
+    );
+};
+
+export default ProjectCard;

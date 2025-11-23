@@ -1,0 +1,88 @@
+@import './variables';
+
+@mixin container-style {
+    background-color: $bg-secondary;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(44, 44, 44, 0.5);
+}
+
+@mixin title-style {
+    color: $grey-text;
+    font-family: $font-primary;
+    font-size: xx-large;
+    padding: $spacing-md;
+}
+
+@mixin text-style {
+    color: $grey-text;
+    font-family: $font-primary;
+}
+
+// Responsive breakpoints
+@mixin mobile-small {
+    @media (max-width: $mobile-small) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin tablet-small {
+    @media (max-width: $tablet-small) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin desktop-small {
+    @media (max-width: $desktop-small) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin desktop-large {
+    @media (max-width: $desktop-large) {
+        @content;
+    }
+}
+
+// Flexbox helpers
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// Image responsive
+@mixin responsive-image {
+    width: 100%;
+    height: auto;
+    border-radius: $radius-md;
+}

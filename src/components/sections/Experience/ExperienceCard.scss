@@ -1,0 +1,204 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.experience-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    @media (min-width: 1430px) {
+        gap: unset;
+    }
+    // Orientations pour desktop
+    &--left {
+        .experience-card__header {
+            align-items: flex-start;
+        }
+
+        .experience-card__company-info {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .experience-card__body {
+            flex-direction: row;
+        }
+
+        .experience-card__footer {
+            justify-content: flex-start;
+        }
+
+        // Tablet et en dessous : centrer tout
+        @media (max-width: 1080px) {
+            .experience-card__header,
+            .experience-card__company-info {
+                align-items: center;
+                text-align: center;
+            }
+
+            .experience-card__body {
+                flex-direction: column;
+            }
+
+            .experience-card__footer {
+                justify-content: center;
+            }
+        }
+    }
+
+    &--right {
+        .experience-card__header {
+            align-items: flex-end;
+        }
+
+        .experience-card__company-info {
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .experience-card__body {
+            flex-direction: row-reverse;
+        }
+
+        .experience-card__footer {
+            justify-content: flex-end;
+        }
+
+        // Tablet et en dessous : centrer tout
+        @media (max-width: 1080px) {
+            .experience-card__header,
+            .experience-card__company-info {
+                align-items: center;
+                text-align: center;
+            }
+
+            .experience-card__body {
+                flex-direction: column;
+            }
+
+            .experience-card__footer {
+                justify-content: center;
+            }
+        }
+    }
+
+    // Header
+    &__header {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 5px;
+    }
+
+    &__company-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    &__company-name {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        color: $grey-text;
+        font-family: $font-primary;
+        line-height: 1.2;
+    }
+
+    &__role {
+        font-size: clamp(0.875rem, 2vw, 1rem);
+        color: $grey-text;
+        font-family: $font-primary;
+        margin-bottom: 5px;
+    }
+
+    // Body
+    &__body {
+        display: flex;
+        gap: 30px;
+        &--projex,
+        &--niji {
+            @media (max-width: 1100px) {
+                align-items: flex-end;
+            }
+        }
+
+        @media (max-width: 1080px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+    &__description {
+        @include container-style;
+        background-color: $bg-tertiary;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        min-width: 0;
+
+        p {
+            color: $grey-text;
+            padding: 0px 15px;
+
+            @include mobile {
+                padding: 0px 10px;
+            }
+        }
+    }
+
+    // Images
+    &__image-wrapper {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    &__image {
+        border-radius: $radius-md;
+        border: 1px solid $border-color;
+        width: 100%;
+        max-width: 485px;
+        height: auto;
+        object-fit: cover;
+
+        @include desktop-small {
+            max-width: 430px;
+        }
+
+        @media (max-width: 1080px) {
+            max-width: 100%;
+        }
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__image-mobile {
+        display: none;
+        border-radius: $radius-md;
+        border: 1px solid $border-color;
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+
+        @include mobile {
+            display: block;
+        }
+    }
+
+    // Footer
+    &__footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 13px;
+        @include mobile {
+            gap: 6px;
+            justify-content: center;
+        }
+    }
+}
