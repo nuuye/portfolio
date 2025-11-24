@@ -161,7 +161,7 @@
         width: 100%;
         max-width: 485px;
         height: auto;
-        object-fit: cover;
+        object-fit: fill;
 
         @include desktop-small {
             max-width: 430px;
@@ -183,7 +183,7 @@
         width: 100%;
         height: auto;
         max-height: 500px;
-        object-fit: cover;
+        object-fit: fill;
 
         @include mobile {
             display: block;
