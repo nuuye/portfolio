@@ -4,6 +4,8 @@ import './SkillIcon.scss';
 
 interface SkillIconProps {
     skill: Skill;
+    index?: number;
+    isVisible?: boolean;
 }
 
 const SkillIcon: React.FC<SkillIconProps> = ({ skill }) => {

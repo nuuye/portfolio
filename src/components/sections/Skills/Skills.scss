@@ -18,8 +18,9 @@
 
     &__container {
         @include container-style;
+        margin: 50px;
         border-left: unset;
-        margin: $spacing-lg 200px;
+        //margin: $spacing-lg 200px;
         display: flex;
 
         @media (max-width: 1030px) {
@@ -70,18 +71,16 @@
     &__content {
         display: flex;
         align-items: flex-start;
-        padding-top: 10px;
-        padding-left: 10px;
+        width: 100%;
+        padding: 20px;
 
         @media (max-width: 540px) {
-            max-height: 410px;
             overflow: auto;
             overflow-x: hidden;
         }
 
         @media (max-width: 659px) {
             &.frontend-content {
-                max-height: 430px;
                 overflow: auto;
                 overflow-x: hidden;
             }
@@ -92,5 +91,8 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        gap: 15px;
+        width: 100%;
+        justify-content: space-evenly;
     }
 }
