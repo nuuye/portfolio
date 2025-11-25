@@ -18,8 +18,9 @@
 
     &__container {
         @include container-style;
+        margin: 50px;
         border-left: unset;
-        margin: $spacing-lg 200px;
+        //margin: $spacing-lg 200px;
         display: flex;
 
         @media (max-width: 1030px) {
@@ -60,7 +61,11 @@
             border: 2px solid $border-color;
             border-right: none;
             border-top: 1px solid $border-color;
-
+            background: linear-gradient(
+                135deg,
+                #1a1a23 0%,
+                rgb(31.6285714286, 31.6285714286, 42.1714285714) 100%
+            );
             &:first-child {
                 border-top: 2px solid $border-color;
             }
@@ -70,18 +75,16 @@
     &__content {
         display: flex;
         align-items: flex-start;
-        padding-top: 10px;
-        padding-left: 10px;
+        width: 100%;
+        padding: 20px;
 
         @media (max-width: 540px) {
-            max-height: 410px;
             overflow: auto;
             overflow-x: hidden;
         }
 
         @media (max-width: 659px) {
             &.frontend-content {
-                max-height: 430px;
                 overflow: auto;
                 overflow-x: hidden;
             }
@@ -92,5 +95,8 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        gap: 15px;
+        width: 100%;
+        justify-content: space-evenly;
     }
 }

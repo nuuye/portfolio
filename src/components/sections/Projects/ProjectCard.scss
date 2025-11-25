@@ -48,11 +48,11 @@
         }
 
         @media (max-width: 530px) {
-            padding: 25px;
+            padding: 50px 25px;
         }
 
         @media (max-width: 435px) {
-            padding: 15px;
+            padding: 50px 20px;
         }
     }
 
@@ -60,15 +60,23 @@
         flex-direction: row-reverse;
         padding: 50px 100px 50px 40px;
 
+        .project-card__content {
+            @media (max-width: 1270px) {
+                align-items: center;
+            }
+        }
+
         @media (max-width: 1270px) {
             flex-direction: column;
             padding-right: 40px;
         }
 
-        .project-card__content {
-            @media (max-width: 1270px) {
-                align-items: center;
-            }
+        @media (max-width: 530px) {
+            padding: 50px 25px;
+        }
+
+        @media (max-width: 435px) {
+            padding: 50px 20px;
         }
     }
 
@@ -114,9 +122,19 @@
             &.calculator-img {
                 width: unset;
                 display: block;
+                //border: 4px solid #69537c;
                 @media (max-width: 810px) {
                     width: 250px;
                 }
+            }
+            &.dominion-img {
+                border: 4px solid #462e5e;
+            }
+            &.plany-img {
+                border: 4px solid rgb(150, 167, 160);
+            }
+            &.obis-img {
+                border: 4px solid #52527c;
             }
         }
 
@@ -128,8 +146,15 @@
             @media (max-width: 730px) {
                 display: unset;
             }
+            &.plany-mobile {
+                border: 4px solid rgb(150, 167, 160);
+            }
+            &.dominion-mobile {
+                border: 4px solid #5f410f;
+            }
 
             &.obis-mobile {
+                border: 4px solid #52527c;
                 @media (max-width: 565px) {
                     width: 380px;
                 }
@@ -149,12 +174,18 @@
         }
 
         .project-card__video-desktop {
+            &--fitlogs {
+                border: 4px solid #0f4e8c !important;
+            }
             @media (max-width: 730px) {
                 display: none;
             }
         }
 
         .project-card__video-mobile {
+            &--fitlogs {
+                border: 4px solid #0f4e8c !important;
+            }
             border-radius: $radius-md;
 
             @media (min-width: 730px) {

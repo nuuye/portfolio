@@ -1,13 +1,43 @@
 // Colors
-$bg-primary: #333231;
-$bg-secondary: #373743;
-$bg-tertiary: #383939;
-$border-color: #323030;
-$blue-primary: #2b86ff;
+// Couleurs de fond - Plus de contraste et profondeur
+$bg-primary: #1a1a1f; // Plus sombre et moderne
+$bg-secondary: #242430; // Meilleur contraste
+$bg-tertiary: #2d2d3a; // Variation plus visible
+$bg-elevated: #2f2f3e; // Pour les éléments en avant-plan
+
 $grey-text: #ffffffad;
 $grey-text-light: #ffffff67;
-$selection-bg: #23678f9e;
-$scrollbar-color: #505063;
+
+// Bordures et séparateurs - Plus subtils
+$border-color: #3a3a4a; // Plus visible mais élégant
+$border-subtle: #2a2a35; // Pour des séparations légères - Never used
+
+// Couleurs d'accent - Palette étendue
+$blue-primary: #3b9eff; // Plus lumineux et moderne
+$blue-hover: #5db0ff; // État hover
+$blue-dark: #2a7ad4; // Variation sombre
+
+// Nouveaux accents
+$purple-accent: #a78bfa; // Pour la diversité visuelle
+$cyan-accent: #22d3ee; // Pour les highlights - Never used
+$pink-accent: #f472b6; // Pour les éléments spéciaux - Never used
+
+// Texte - Hiérarchie améliorée
+$text-primary: #f8f9fa; // Texte principal
+$text-secondary: #c7c9d1; // Texte secondaire
+$text-tertiary: #9499a8; // Texte moins important - Never used
+$text-disabled: #6b6f7f; // Texte désactivé - Never used
+
+// États et feedbacks
+$success-color: #34d399; // Never used
+$warning-color: #fbbf24; // Never used
+$error-color: #f87171; // Never used
+$info-color: #60a5fa; // Never used
+
+// Effets et overlay
+$selection-bg: rgba(59, 158, 255, 0.25);
+$overlay-dark: rgba(0, 0, 0, 0.5); // Never used
+$overlay-light: rgba(255, 255, 255, 0.05); // Never used
 
 // Font Family
 $font-primary: 'Roboto', sans-serif;
@@ -34,3 +64,8 @@ $radius-sm: 4px;
 $radius-md: 6px;
 $radius-lg: 8px;
 
+// Scrollbar - Never used
+$scrollbar-color: #505063;
+$scrollbar-track: #1f1f26;
+$scrollbar-thumb: #4a4a5e;
+$scrollbar-thumb-hover: #5a5a70;

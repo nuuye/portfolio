@@ -13,7 +13,7 @@ const Experience: React.FC = () => {
             {experiences.map((exp, index) => (
                 <React.Fragment key={exp.id}>
                     <div
-                        className={`experience__item experience__item--${exp.orientation}`}
+                        className={`experience__item experience__item--${exp.id} experience__item--${exp.orientation}`}
                     >
                         <ExperienceCard experience={exp} />
                     </div>

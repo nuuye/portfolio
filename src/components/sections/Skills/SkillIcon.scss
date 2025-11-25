@@ -2,22 +2,53 @@
 
 .skill-icon {
     width: 65px;
-    height: 88px;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 8px;
-    margin: 10px 20px;
     cursor: pointer;
     text-decoration: none;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
 
     @media (max-width: 595px) {
-        height: unset;
+        width: 50px;
+    }
+
+    // S'assurer que les icônes sont visibles dès le départ
+    &--visible {
+        opacity: 1;
+        transform: translateY(0);
+        animation: fadeInUp 0.4s ease;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+
+        img {
+            filter: brightness(1.2);
+        }
+
+        span {
+            color: lighten($grey-text, 20%);
+        }
     }
 
     img {
         width: 65px;
         height: 65px;
+        transition: filter 0.3s ease;
 
         @media (max-width: 595px) {
             width: 35px;
@@ -73,5 +104,10 @@
         font-family: $font-primary;
         font-size: small;
         text-align: center;
+        transition: color 0.3s ease;
+
+        @media (max-width: 595px) {
+            font-size: x-small;
+        }
     }
 }

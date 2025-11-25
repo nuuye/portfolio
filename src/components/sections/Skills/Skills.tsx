@@ -7,6 +7,8 @@ import './Skills.scss';
 
 const Skills: React.FC = () => {
     const [activeCategory, setActiveCategory] = useState<SkillCategory>('software');
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    const [showIcons, setShowIcons] = useState(true);
 
     const getFilteredSkills = () => {
         return skills.filter((skill) => skill.category === activeCategory);
@@ -14,6 +16,23 @@ const Skills: React.FC = () => {
 
     const isCategoryActive = (categoryId: SkillCategory) => {
         return activeCategory === categoryId;
+    };
+
+    const handleCategoryChange = (categoryId: SkillCategory) => {
+        if (categoryId === activeCategory) return;
+
+        setIsTransitioning(true);
+        setShowIcons(false);
+
+        setTimeout(() => {
+            setActiveCategory(categoryId);
+            setIsTransitioning(false);
+
+            // Petit délai pour permettre au DOM de se mettre à jour
+            setTimeout(() => {
+                setShowIcons(true);
+            }, 50);
+        }, 200);
     };
 
     return (
@@ -29,7 +48,7 @@ const Skills: React.FC = () => {
                             className={`skills__tab ${
                                 isCategoryActive(category.id) ? 'skills__tab--active' : ''
                             }`}
-                            onClick={() => setActiveCategory(category.id)}
+                            onClick={() => handleCategoryChange(category.id)}
                         >
                             {category.label}
                         </div>
@@ -37,10 +56,19 @@ const Skills: React.FC = () => {
                 </div>
 
                 {/* Content */}
-                <div className="skills__content">
+                <div
+                    className={`skills__content ${
+                        isTransitioning ? 'skills__content--transitioning' : ''
+                    }`}
+                >
                     <div className="skills__icons">
-                        {getFilteredSkills().map((skill) => (
-                            <SkillIcon key={skill.name} skill={skill} />
+                        {getFilteredSkills().map((skill, index) => (
+                            <SkillIcon
+                                key={skill.name}
+                                skill={skill}
+                                index={index}
+                                isVisible={showIcons}
+                            />
                         ))}
                     </div>
                 </div>

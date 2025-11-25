@@ -18,7 +18,7 @@
     }
 
     &__item {
-        padding: 15px 120px 30px 120px;
+        padding: 40px 120px 30px 120px;
 
         @media (max-width: 1375px) {
             padding-left: 80px;
@@ -26,20 +26,20 @@
         }
 
         @media (max-width: 1275px) {
+            padding-top: 40px;
             padding-left: 40px;
             padding-right: 40px;
         }
 
-        @media (max-width: 435px) {
-            padding: 15px;
+        &--projex {
+            @media (max-width: 435px) {
+                padding: 30px 15px 15px 15px;
+            }
         }
-
-        &--right {
-            // Styles spécifiques pour orientation right si nécessaire
-        }
-
-        &--left {
-            // Styles spécifiques pour orientation left si nécessaire
+        &--niji {
+            @media (max-width: 435px) {
+                padding: 20px 15px 15px 15px;
+            }
         }
     }
 }

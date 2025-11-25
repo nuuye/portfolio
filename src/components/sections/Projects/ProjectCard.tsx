@@ -87,7 +87,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                         loop
                         muted
                         playsInline
-                        className="project-card__video-desktop"
+                        className={`project-card__video-desktop project-card__video-desktop--${id}`}
                     />
                     {videoMobile && (
                         <video
@@ -96,7 +96,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                             loop
                             muted
                             playsInline
-                            className="project-card__video-mobile"
+                            className={`project-card__video-mobile project-card__video-mobile--${id}`}
                         />
                     )}
                     {isProject('fitlogs') && renderProjectTags(false)}
@@ -104,15 +104,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             );
         }
 
-        // Classe spéciale pour la calculatrice
-        const imageClass = isProject('calculator')
-            ? 'project-card__image calculator-img' //special width
-            : 'project-card__image';
+        const imageClass = `project-card__image ${id}-img`
 
-        // Classe spéciale pour OBIS mobile
-        const mobileImageClass = isProject('obis')
-            ? 'project-card__image-mobile obis-mobile'
-            : 'project-card__image-mobile';
+        const mobileImageClass = `project-card__image-mobile ${id}-mobile`
 
         return (
             <>
