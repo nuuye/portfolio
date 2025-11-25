@@ -1,12 +1,16 @@
 export const useSmoothScroll = () => {
     const scrollToSection = (sectionId: string) => {
-        const targetElement = document.getElementById(sectionId);
+        if (sectionId === 'top') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            const targetElement = document.getElementById(sectionId);
 
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop,
-                behavior: 'smooth',
-            });
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth',
+                });
+            }
         }
     };
 

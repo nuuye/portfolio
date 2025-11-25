@@ -14,7 +14,7 @@ const Header: React.FC = () => {
         <header className={`header ${!isVisible ? 'header--hidden' : ''}`}>
             <button
                 className="header__home-button"
-                onClick={() => scrollToSection('firstContainerSection')}
+                onClick={() => scrollToSection('top')}
             >
                 <HomeIcon sx={{ fontSize: 32, color: '#2b86ff' }} />
             </button>

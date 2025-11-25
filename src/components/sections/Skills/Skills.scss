@@ -61,7 +61,11 @@
             border: 2px solid $border-color;
             border-right: none;
             border-top: 1px solid $border-color;
-
+            background: linear-gradient(
+                135deg,
+                #1a1a23 0%,
+                rgb(31.6285714286, 31.6285714286, 42.1714285714) 100%
+            );
             &:first-child {
                 border-top: 2px solid $border-color;
             }
