@@ -1,8 +1,11 @@
 import { Experience } from '../types/experience.types';
+
 import projexPicture from '../images/projex_homepage.png';
 import projexMobile from '../images/projex_homepage_mobile.png';
 import nijiPicture from '../images/niji_homepage.png';
 import nijiMobilePicture from '../images/niji_homepage_mobile.png';
+import advancedSchemaPicture from '../images/advanced_homepage.png';
+import advancedSchemaMobilePicture from '../images/advanced_homepage.png';
 
 export const experiences: Experience[] = [
     {
@@ -16,7 +19,7 @@ export const experiences: Experience[] = [
             'A year later, I returned to Projex for a three-and-a-half-month mission as a React Web Developer. I worked on the development of a platform connecting consultants and clients, using React (TypeScript) and Ant Design, while occasionally interacting with a Node.js and PostgreSQL backend.',
             'During this mission, I strengthened my teamwork and organizational skills through GitLab, Jira and daily team rituals.',
         ],
-        duration: '1 + 3,5 months',
+        duration: '1 + 3.5 months',
         technologies: ['React.js', 'TypeScript', 'SCSS & Ant Design', 'Next.js'],
         orientation: 'left',
     },
@@ -35,5 +38,28 @@ export const experiences: Experience[] = [
         duration: '6 months',
         technologies: ['Salesforce', 'Apex', 'JavaScript', 'SOQL'],
         orientation: 'right',
+    },
+    {
+        id: 'advanced-schema',
+        company: 'Advanced Schema',
+        role: 'Full-Stack Developer Consultant',
+        image: advancedSchemaPicture,
+        mobileImage: advancedSchemaMobilePicture,
+        description: [
+            'As a Full-Stack Developer Consultant at Advanced Schema, I work for BNP Paribas within Data Hub Flux, a complex banking environment that processes large volumes of payment data. I contribute to projects with production constraints and sometimes short delivery deadlines.',
+            'I helped complete DHF Flux Manager, a Python tool used to standardize around 220 Kafka topics and migrate legacy flows. I worked on configuration generation, flow mapping and visualization, then supported deployments in qualification and production.',
+            'I designed a Data Generator from scratch and delivered it within a short timeframe. Dockerized and integrated with GitLab CI, the tool injects test data into Kafka and is used by the whole team for development and non-regression testing.',
+            'Using Spring Boot, I also worked on Bank Mobility, which retrieves and securely transfers 13 months of customer transaction history, and on the Data Recovery Engine, which replays payment data from MongoDB or HDFS through Kafka.',
+        ],
+        duration: 'June 2025 – Present',
+        technologies: [
+            'Python',
+            'Linux',
+            'Kafka',
+            'Spring Boot',
+            'Docker & GitLab CI',
+            'MongoDB & HDFS',
+        ],
+        orientation: 'left',
     },
 ];

@@ -201,4 +201,12 @@
             justify-content: center;
         }
     }
+
+    // CUSTOM Experience Card
+    &__body--advanced-schema {
+        .experience-card__image,
+        .experience-card__image-mobile {
+            border-radius: 16px;
+        }
+    }
 }
