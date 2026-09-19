@@ -49,10 +49,38 @@
         @media (max-width: 830px) {
             flex-direction: row;
             overflow-x: auto;
+            overflow-y: hidden;
+            padding-bottom: 10px;
             border-right: 0;
             border-bottom: 1px solid $border-color;
+            overscroll-behavior-inline: contain;
+            scroll-behavior: smooth;
+            scroll-padding-inline: 12px;
             scroll-snap-type: x mandatory;
             scrollbar-width: thin;
+            scrollbar-color: rgba($blue-primary, 0.78) rgba($bg-primary, 0.55);
+
+            &::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            &::-webkit-scrollbar-track {
+                margin: 0 12px;
+                border-radius: 999px;
+                background: rgba($bg-primary, 0.55);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border: 2px solid transparent;
+                border-radius: 999px;
+                background: linear-gradient(90deg, $blue-dark, $blue-primary);
+                background-clip: padding-box;
+
+                &:hover {
+                    background: linear-gradient(90deg, $blue-primary, $blue-hover);
+                    background-clip: padding-box;
+                }
+            }
         }
     }
 
@@ -144,6 +172,13 @@
         margin-bottom: 30px;
         padding-bottom: 16px;
         border-bottom: 1px solid $border-color;
+        align-items: center;
+
+        @media (max-width: 650px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+        }
 
         span:first-child {
             color: $text-primary;

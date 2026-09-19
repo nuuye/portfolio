@@ -41,13 +41,37 @@ const Skills: React.FC = () => {
         }, 200);
     };
 
+    const handleTabsWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+        const tabs = event.currentTarget;
+        const maxScrollLeft = tabs.scrollWidth - tabs.clientWidth;
+
+        if (maxScrollLeft <= 0 || Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
+            return;
+        }
+
+        const canScroll =
+            event.deltaY > 0
+                ? tabs.scrollLeft < maxScrollLeft - 1
+                : tabs.scrollLeft > 1;
+
+        if (!canScroll) return;
+
+        event.preventDefault();
+        tabs.scrollBy({ left: event.deltaY, behavior: 'auto' });
+    };
+
     return (
         <div className="skills" id="skillsSection">
             <SectionTitle>Skills</SectionTitle>
 
             <div className="skills__container">
                 {/* Tabs */}
-                <div className="skills__tabs" role="tablist" aria-label="Skill categories">
+                <div
+                    className="skills__tabs"
+                    role="tablist"
+                    aria-label="Skill categories"
+                    onWheel={handleTabsWheel}
+                >
                     {skillCategories.map((category) => (
                         <button
                             type="button"
