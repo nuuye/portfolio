@@ -19,9 +19,10 @@
     &__container {
         @include container-style;
         margin: 50px;
-        border-left: unset;
-        //margin: $spacing-lg 200px;
-        display: flex;
+        display: grid;
+        grid-template-columns: minmax(235px, 0.34fr) 1fr;
+        min-height: 360px;
+        overflow: hidden;
 
         @media (max-width: 1030px) {
             margin: $spacing-lg 100px;
@@ -29,6 +30,7 @@
 
         @media (max-width: 830px) {
             margin: $spacing-lg $spacing-xl;
+            grid-template-columns: 1fr;
         }
 
         @media (max-width: 465px) {
@@ -39,44 +41,116 @@
     &__tabs {
         display: flex;
         flex-direction: column;
-    }
+        gap: 6px;
+        padding: 12px;
+        border-right: 1px solid $border-color;
+        background: rgba($bg-primary, 0.3);
 
-    &__tab {
-        @include container-style;
-        padding: $spacing-xl;
-        color: $grey-text;
-        cursor: pointer;
-        border-right: 2px solid $border-color;
+        @media (max-width: 830px) {
+            flex-direction: row;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-bottom: 10px;
+            border-right: 0;
+            border-bottom: 1px solid $border-color;
+            overscroll-behavior-inline: contain;
+            scroll-behavior: smooth;
+            scroll-padding-inline: 12px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            scrollbar-color: rgba($blue-primary, 0.78) rgba($bg-primary, 0.55);
 
-        @media (max-width: 865px) {
-            padding: 55px;
-        }
+            &::-webkit-scrollbar {
+                height: 8px;
+            }
 
-        @media (max-width: 540px) {
-            padding: 35px;
-        }
+            &::-webkit-scrollbar-track {
+                margin: 0 12px;
+                border-radius: 999px;
+                background: rgba($bg-primary, 0.55);
+            }
 
-        &--active {
-            box-shadow: none;
-            border: 2px solid $border-color;
-            border-right: none;
-            border-top: 1px solid $border-color;
-            background: linear-gradient(
-                135deg,
-                #1a1a23 0%,
-                rgb(31.6285714286, 31.6285714286, 42.1714285714) 100%
-            );
-            &:first-child {
-                border-top: 2px solid $border-color;
+            &::-webkit-scrollbar-thumb {
+                border: 2px solid transparent;
+                border-radius: 999px;
+                background: linear-gradient(90deg, $blue-dark, $blue-primary);
+                background-clip: padding-box;
+
+                &:hover {
+                    background: linear-gradient(90deg, $blue-primary, $blue-hover);
+                    background-clip: padding-box;
+                }
             }
         }
     }
 
+    &__tab {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        width: 100%;
+        padding: 16px 14px;
+        align-items: center;
+        border: 1px solid transparent;
+        border-radius: 12px;
+        background: transparent;
+        color: $grey-text-light;
+        cursor: pointer;
+        font-family: $font-primary;
+        text-align: left;
+        transition: background-color 0.22s ease, border-color 0.22s ease, color 0.22s ease,
+            transform 0.22s ease;
+
+        &:hover {
+            border-color: rgba($blue-primary, 0.18);
+            background: rgba($blue-primary, 0.07);
+            color: $text-primary;
+            transform: translateX(2px);
+        }
+
+        @media (max-width: 830px) {
+            min-width: 205px;
+            scroll-snap-align: start;
+
+            &:hover {
+                transform: translateY(-1px);
+            }
+        }
+
+        @media (max-width: 540px) {
+            min-width: 185px;
+            padding: 13px 12px;
+        }
+
+        &--active {
+            border-color: rgba($blue-primary, 0.42);
+            background: linear-gradient(120deg, rgba($blue-primary, 0.18), rgba($purple-accent, 0.12));
+            color: $text-primary;
+            box-shadow: inset 3px 0 0 $blue-primary;
+        }
+    }
+
+    &__tab-label {
+        overflow: hidden;
+        font-size: 0.82rem;
+        font-weight: 600;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     &__content {
         display: flex;
-        align-items: flex-start;
+        flex-direction: column;
         width: 100%;
-        padding: 20px;
+        padding: 26px clamp(22px, 4vw, 46px) 34px;
+        opacity: 1;
+        transition: opacity 0.18s ease, transform 0.18s ease;
+
+        &--transitioning {
+            opacity: 0;
+            transform: translateY(4px);
+        }
 
         @media (max-width: 540px) {
             overflow: auto;
@@ -91,12 +165,43 @@
         }
     }
 
-    &__icons {
+    &__content-header {
         display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 30px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid $border-color;
         align-items: center;
-        flex-wrap: wrap;
-        gap: 15px;
+
+        @media (max-width: 650px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
+        span:first-child {
+            color: $text-primary;
+            font-family: $font-title;
+            font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+        }
+
+        span:last-child {
+            color: $grey-text-light;
+            font-size: 0.72rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+    }
+
+    &__icons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+        gap: 14px;
         width: 100%;
-        justify-content: space-evenly;
+
+        @media (max-width: 540px) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
     }
 }

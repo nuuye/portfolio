@@ -18,6 +18,12 @@ const Skills: React.FC = () => {
         return activeCategory === categoryId;
     };
 
+    const activeCategoryLabel = skillCategories.find(
+        (category) => category.id === activeCategory
+    )?.label;
+
+    const activeSkills = getFilteredSkills();
+
     const handleCategoryChange = (categoryId: SkillCategory) => {
         if (categoryId === activeCategory) return;
 
@@ -35,34 +41,70 @@ const Skills: React.FC = () => {
         }, 200);
     };
 
+    const handleTabsWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+        const tabs = event.currentTarget;
+        const maxScrollLeft = tabs.scrollWidth - tabs.clientWidth;
+
+        if (maxScrollLeft <= 0 || Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
+            return;
+        }
+
+        const canScroll =
+            event.deltaY > 0
+                ? tabs.scrollLeft < maxScrollLeft - 1
+                : tabs.scrollLeft > 1;
+
+        if (!canScroll) return;
+
+        event.preventDefault();
+        tabs.scrollBy({ left: event.deltaY, behavior: 'auto' });
+    };
+
     return (
         <div className="skills" id="skillsSection">
             <SectionTitle>Skills</SectionTitle>
 
             <div className="skills__container">
                 {/* Tabs */}
-                <div className="skills__tabs">
+                <div
+                    className="skills__tabs"
+                    role="tablist"
+                    aria-label="Skill categories"
+                    onWheel={handleTabsWheel}
+                >
                     {skillCategories.map((category) => (
-                        <div
+                        <button
+                            type="button"
+                            role="tab"
                             key={category.id}
+                            id={`skills-tab-${category.id}`}
+                            aria-selected={isCategoryActive(category.id)}
+                            aria-controls="skills-panel"
                             className={`skills__tab ${
                                 isCategoryActive(category.id) ? 'skills__tab--active' : ''
                             }`}
                             onClick={() => handleCategoryChange(category.id)}
                         >
-                            {category.label}
-                        </div>
+                            <span className="skills__tab-label">{category.label}</span>
+                        </button>
                     ))}
                 </div>
 
                 {/* Content */}
                 <div
+                    id="skills-panel"
+                    role="tabpanel"
+                    aria-labelledby={`skills-tab-${activeCategory}`}
                     className={`skills__content ${
                         isTransitioning ? 'skills__content--transitioning' : ''
                     }`}
                 >
+                    <div className="skills__content-header">
+                        <span>{activeCategoryLabel}</span>
+                        <span>{activeSkills.length} technologies</span>
+                    </div>
                     <div className="skills__icons">
-                        {getFilteredSkills().map((skill, index) => (
+                        {activeSkills.map((skill, index) => (
                             <SkillIcon
                                 key={skill.name}
                                 skill={skill}
