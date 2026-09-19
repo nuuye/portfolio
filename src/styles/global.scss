@@ -22,6 +22,11 @@ body {
     overflow-x: hidden;
 }
 
+:focus-visible {
+    outline: 2px solid $blue-primary;
+    outline-offset: 3px;
+}
+
 // Liens
 a {
     text-decoration: none;
@@ -48,7 +53,7 @@ button {
 
 p {
     font-size: clamp(0.975rem, 2vw, 1.1rem);
-    line-height: 1.4;
+    line-height: 1.55;
 }
 
 // Utilitaires

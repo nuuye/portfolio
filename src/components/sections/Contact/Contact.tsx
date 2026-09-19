@@ -13,12 +13,12 @@ const Contact: React.FC = () => {
             <div className="contact__wrapper">
                 <div className="contact__container">
                     <ContactInfo
-                        icon={<EmailIcon sx={{ color: '#2b86ff' }} />}
+                        icon={<EmailIcon sx={{ color: '#63a8ff' }} />}
                         title="Email"
                         value="thomassmostowfi@gmail.com"
                     />
                     <ContactInfo
-                        icon={<PhoneIcon sx={{ color: '#2b86ff' }} />}
+                        icon={<PhoneIcon sx={{ color: '#63a8ff' }} />}
                         title="Phone Number"
                         value="+33(0)7 43 50 96 00"
                     />

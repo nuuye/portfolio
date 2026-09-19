@@ -74,18 +74,15 @@
 }
 
 @mixin container-style {
-    background: linear-gradient(135deg, $bg-secondary 0%, darken($bg-secondary, 2%) 100%);
+    background: $bg-secondary;
     border: 1px solid $border-color;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: $radius-lg;
+    box-shadow: 0 14px 34px rgba(3, 7, 18, 0.22);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
 
     &:hover {
-        border-color: lighten($border-color, 5%);
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        border-color: lighten($border-color, 6%);
+        box-shadow: 0 16px 38px rgba(3, 7, 18, 0.28);
     }
 }
 
@@ -98,18 +95,12 @@
 
 @mixin title-style {
     color: $text-primary;
-    font-family: $font-primary;
+    font-family: $font-title;
     font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 700;
+    font-weight: 600;
     padding: $spacing-md;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.045em;
     line-height: 1.2;
-
-    // Effet de dégradé subtil
-    background: linear-gradient(135deg, $text-primary 0%, $text-secondary 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 
     position: relative;
 
@@ -119,11 +110,11 @@
         position: absolute;
         bottom: 0;
         left: $spacing-md;
-        width: 60px;
-        height: 4px;
-        background: linear-gradient(90deg, $blue-primary, $purple-accent);
-        border-radius: 2px;
-        opacity: 0.8;
+        width: 48px;
+        height: 2px;
+        background: $blue-primary;
+        border-radius: 0;
+        opacity: 1;
     }
 }
 

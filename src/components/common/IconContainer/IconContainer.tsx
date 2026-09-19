@@ -24,12 +24,11 @@ export default function IconContainer(props: IconContainerProps) {
             >
                 <Button
                     sx={{
-                        backgroundColor: { background },
+                        backgroundColor: background,
                         width: '100%',
                         height: '100%',
                         minWidth: '0',
-                        boxShadow:
-                            '2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(63, 63, 63, 0.5)',
+                        boxShadow: 'none',
                         borderRadius: 2,
                     }}
                 >

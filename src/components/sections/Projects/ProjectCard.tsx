@@ -46,8 +46,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             >
                 {githubLink && (
                     <a href={githubLink} target="_blank" rel="noreferrer">
-                        <IconContainer background="#383939" tooltip="See the code">
-                            <GitHubIcon sx={{ color: '#2b86ff' }} />
+                        <IconContainer background="#18243a" tooltip="See the code">
+                            <GitHubIcon sx={{ color: '#63a8ff' }} />
                         </IconContainer>
                     </a>
                 )}

@@ -1,40 +1,39 @@
 @import '../../../styles/variables';
 
 .skill-icon {
-    width: 65px;
+    width: 100%;
+    min-height: 112px;
+    padding: 15px 10px;
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
+    border: 1px solid $border-color;
+    border-radius: 14px;
+    background: rgba($bg-primary, 0.26);
     cursor: pointer;
     text-decoration: none;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.25s ease,
+        background-color 0.25s ease;
 
     @media (max-width: 595px) {
-        width: 50px;
+        width: 100%;
+        min-height: 96px;
     }
 
     // S'assurer que les icônes sont visibles dès le départ
     &--visible {
         opacity: 1;
         transform: translateY(0);
-        animation: fadeInUp 0.4s ease;
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
 
     &:hover {
-        transform: translateY(-5px);
+        border-color: rgba($blue-primary, 0.55);
+        background: rgba($blue-primary, 0.07);
+        transform: translateY(-3px);
 
         img {
             filter: brightness(1.2);
@@ -46,68 +45,76 @@
     }
 
     img {
-        width: 65px;
-        height: 65px;
-        transition: filter 0.3s ease;
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+        filter: saturate(0.88);
+        transition: filter 0.3s ease, transform 0.3s ease;
 
         @media (max-width: 595px) {
-            width: 35px;
-            height: 35px;
+            width: 42px;
+            height: 42px;
         }
 
         &.postgreLogo {
-            width: 63px;
-            height: auto;
-
-            @media (max-width: 595px) {
-                width: 35px;
-                height: 35px;
-            }
-
-            @media (max-width: 550px) {
-                width: 33px;
-            }
-        }
-
-        &.cssLogo {
-            width: 60px;
-            height: auto;
-
-            @media (max-width: 595px) {
-                width: 30px;
-            }
-        }
-
-        &.javaLogo {
             width: 50px;
             height: auto;
 
             @media (max-width: 595px) {
-                width: 32px;
+                width: 42px;
+                height: 42px;
+            }
+
+            @media (max-width: 550px) {
+                width: 40px;
+            }
+        }
+
+        &.cssLogo {
+            width: 48px;
+            height: auto;
+
+            @media (max-width: 595px) {
+                width: 38px;
+            }
+        }
+
+        &.javaLogo {
+            width: 44px;
+            height: auto;
+
+            @media (max-width: 595px) {
+                width: 38px;
             }
         }
 
         &.mongodbLogo {
-            width: 65px;
-            height: 65px;
+            width: 50px;
+            height: 50px;
 
             @media (max-width: 595px) {
-                width: 35px;
-                height: 35px;
+                width: 42px;
+                height: 42px;
             }
         }
     }
 
     span {
         color: $grey-text;
-        font-weight: 400;
+        font-weight: 600;
         font-family: $font-primary;
-        font-size: small;
+        font-size: 0.72rem;
         text-align: center;
         transition: color 0.3s ease;
 
         @media (max-width: 595px) {
-            font-size: x-small;
+            font-size: 0.68rem;
         }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skill-icon {
+        transition: none;
     }
 }

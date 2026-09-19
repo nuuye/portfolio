@@ -1,9 +1,8 @@
 @import '../../../styles/variables';
 
 .section-divider {
-    border: 1px solid $border-color;
-    height: 10px;
+    border: 0;
+    height: 1px;
     margin: 0 20px;
-    border-radius: 5px;
-    background-color: $border-color;
+    background: linear-gradient(90deg, transparent, $border-color 15%, $border-color 85%, transparent);
 }

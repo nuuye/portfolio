@@ -38,8 +38,8 @@ const AboutCard: React.FC = () => {
             <div className="about-card__background">
                 <div className="about-card__section">
                     <div className="about-card__section-title">
-                        <IconContainer background="#373743">
-                            <SchoolIcon color="primary" />
+                        <IconContainer background="#18243a">
+                            <SchoolIcon sx={{ color: '#63a8ff' }} />
                         </IconContainer>
                         <span>Education (Graduated in 2024)</span>
                     </div>
@@ -79,8 +79,8 @@ const AboutCard: React.FC = () => {
 
                 <div className="about-card__section">
                     <div className="about-card__section-title">
-                        <IconContainer background="#373743">
-                            <InterestsIcon sx={{ color: '#2b86ff' }} />
+                        <IconContainer background="#18243a">
+                            <InterestsIcon sx={{ color: '#63a8ff' }} />
                         </IconContainer>
                         <span>Interest</span>
                     </div>
