@@ -77,12 +77,12 @@
     background: $bg-secondary;
     border: 1px solid $border-color;
     border-radius: $radius-lg;
-    box-shadow: 0 14px 34px rgba(3, 7, 18, 0.22);
+    box-shadow: 0 14px 34px rgba(56, 41, 31, 0.12);
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
 
     &:hover {
         border-color: lighten($border-color, 6%);
-        box-shadow: 0 16px 38px rgba(3, 7, 18, 0.28);
+        box-shadow: 0 16px 38px rgba(56, 41, 31, 0.16);
     }
 }
 

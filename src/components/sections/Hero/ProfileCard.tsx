@@ -15,7 +15,7 @@ const customButtonStyle = {
     textAlign: 'left',
     borderRadius: 4,
     lineHeight: 1.4,
-    color: '#63a8ff',
+    color: '#b85c2b',
 };
 
 const ProfileCard: React.FC = () => {
@@ -37,8 +37,8 @@ const ProfileCard: React.FC = () => {
                 <div className="profile-card__details-grid">
                     <div>
                         <div className="profile-card__detail-item">
-                            <IconContainer background="#18243a">
-                                <ConnectWithoutContactIcon sx={{ color: '#63a8ff' }} />
+                            <IconContainer background="#ded3c4">
+                                <ConnectWithoutContactIcon sx={{ color: '#b85c2b' }} />
                             </IconContainer>
                             <Button variant="text" sx={customButtonStyle}>
                                 <span>Socials skills</span>
@@ -46,8 +46,8 @@ const ProfileCard: React.FC = () => {
                             </Button>
                         </div>
                         <div className="profile-card__detail-item">
-                            <IconContainer background="#18243a">
-                                <TranslateIcon sx={{ color: '#63a8ff' }} />
+                            <IconContainer background="#ded3c4">
+                                <TranslateIcon sx={{ color: '#b85c2b' }} />
                             </IconContainer>
                             <Button variant="text" sx={customButtonStyle}>
                                 <span>Languages</span>
@@ -62,8 +62,8 @@ const ProfileCard: React.FC = () => {
                             rel="noreferrer"
                         >
                             <div className="profile-card__detail-item">
-                                <IconContainer background="#18243a">
-                                    <GitHubIcon sx={{ color: '#63a8ff' }} />
+                                <IconContainer background="#ded3c4">
+                                    <GitHubIcon sx={{ color: '#b85c2b' }} />
                                 </IconContainer>
                                 <Button variant="text" sx={customButtonStyle}>
                                     <span>GitHub</span>
@@ -77,8 +77,8 @@ const ProfileCard: React.FC = () => {
                             rel="noreferrer"
                         >
                             <div className="profile-card__detail-item">
-                                <IconContainer background="#18243a">
-                                    <LocationOnIcon sx={{ color: '#63a8ff' }} />
+                                <IconContainer background="#ded3c4">
+                                    <LocationOnIcon sx={{ color: '#b85c2b' }} />
                                 </IconContainer>
                                 <Button variant="text" sx={customButtonStyle}>
                                     <span>Location</span>

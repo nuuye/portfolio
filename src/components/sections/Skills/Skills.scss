@@ -59,7 +59,7 @@
     &__tab {
         position: relative;
         display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-columns: minmax(0, 1fr);
         gap: 10px;
         width: 100%;
         padding: 16px 14px;
@@ -97,7 +97,7 @@
 
         &--active {
             border-color: rgba($blue-primary, 0.42);
-            background: linear-gradient(120deg, rgba($blue-primary, 0.2), rgba($purple-accent, 0.08));
+            background: rgba($blue-primary, 0.13);
             color: $text-primary;
             box-shadow: inset 3px 0 0 $blue-primary;
         }
@@ -109,23 +109,6 @@
         font-weight: 600;
         text-overflow: ellipsis;
         white-space: nowrap;
-    }
-
-    &__tab-count {
-        display: grid;
-        width: 25px;
-        height: 25px;
-        place-items: center;
-        border: 1px solid $border-color;
-        border-radius: 50%;
-        color: $grey-text-light;
-        font-size: 0.66rem;
-
-        .skills__tab--active & {
-            border-color: rgba($blue-primary, 0.45);
-            background: rgba($blue-primary, 0.12);
-            color: $text-primary;
-        }
     }
 
     &__content {

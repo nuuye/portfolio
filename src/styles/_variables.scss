@@ -1,32 +1,32 @@
 // Colors
-// Deep navy palette with layered blue accents
-$bg-primary: #0b1020;
-$bg-secondary: #111a2c;
-$bg-tertiary: #18243a;
-$bg-elevated: #1f2f4a;
+// Mineral beige palette with restrained burnt-orange accents
+$bg-primary: #e8e0d4;
+$bg-secondary: #f3ede4;
+$bg-tertiary: #ded3c4;
+$bg-elevated: #d2c2b0;
 
-$grey-text: #e1e9f5;
-$grey-text-light: #94a4ba;
+$grey-text: #332923;
+$grey-text-light: #706257;
 
 // Bordures et séparateurs - Plus subtils
-$border-color: #2b3d5c;
-$border-subtle: #1b2941;
+$border-color: #b9aa99;
+$border-subtle: #d2c6b8;
 
 // Couleurs d'accent - Palette étendue
-$blue-primary: #63a8ff;
-$blue-hover: #89beff;
-$blue-dark: #377bd8;
+$blue-primary: #b85c2b;
+$blue-hover: #97421d;
+$blue-dark: #7d3519;
 
 // Nouveaux accents
-$purple-accent: #7e8cff;
-$cyan-accent: #5cc8d7;
-$pink-accent: #a887e8;
+$purple-accent: #a77943;
+$cyan-accent: #8c765f;
+$pink-accent: #a55f4b;
 
 // Texte - Hiérarchie améliorée
-$text-primary: #f4f7fc;
-$text-secondary: #c7d2e3;
-$text-tertiary: #94a4ba;
-$text-disabled: #63728a;
+$text-primary: #251d18;
+$text-secondary: #4d4036;
+$text-tertiary: #706257;
+$text-disabled: #98897b;
 
 // États et feedbacks
 $success-color: #34d399; // Never used
@@ -35,7 +35,7 @@ $error-color: #f87171; // Never used
 $info-color: #60a5fa; // Never used
 
 // Effets et overlay
-$selection-bg: rgba(99, 168, 255, 0.28);
+$selection-bg: rgba(184, 92, 43, 0.24);
 $overlay-dark: rgba(0, 0, 0, 0.5); // Never used
 $overlay-light: rgba(255, 255, 255, 0.05); // Never used
 
@@ -65,7 +65,7 @@ $radius-md: 10px;
 $radius-lg: 16px;
 
 // Scrollbar - Never used
-$scrollbar-color: #344d76;
-$scrollbar-track: #0b1020;
-$scrollbar-thumb: #2b3d5c;
-$scrollbar-thumb-hover: #42608e;
+$scrollbar-color: #aa9580;
+$scrollbar-track: #e8e0d4;
+$scrollbar-thumb: #b9aa99;
+$scrollbar-thumb-hover: #907b67;

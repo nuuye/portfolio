@@ -62,9 +62,6 @@ const Skills: React.FC = () => {
                             onClick={() => handleCategoryChange(category.id)}
                         >
                             <span className="skills__tab-label">{category.label}</span>
-                            <span className="skills__tab-count">
-                                {skills.filter((skill) => skill.category === category.id).length}
-                            </span>
                         </button>
                     ))}
                 </div>

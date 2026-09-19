@@ -16,7 +16,7 @@ const Header: React.FC = () => {
                 className="header__home-button"
                 onClick={() => scrollToSection('top')}
             >
-                <HomeIcon sx={{ fontSize: 32, color: '#63a8ff' }} />
+                <HomeIcon sx={{ fontSize: 32, color: '#b85c2b' }} />
             </button>
             <nav className="header__nav">
                 <IconLabelButtons

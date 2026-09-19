@@ -38,8 +38,8 @@ const AboutCard: React.FC = () => {
             <div className="about-card__background">
                 <div className="about-card__section">
                     <div className="about-card__section-title">
-                        <IconContainer background="#18243a">
-                            <SchoolIcon sx={{ color: '#63a8ff' }} />
+                        <IconContainer background="#ded3c4">
+                            <SchoolIcon sx={{ color: '#b85c2b' }} />
                         </IconContainer>
                         <span>Education (Graduated in 2024)</span>
                     </div>
@@ -49,12 +49,12 @@ const AboutCard: React.FC = () => {
                                 <ListItemIcon>
                                     <FiberManualRecordIcon
                                         fontSize="small"
-                                        sx={{ color: '#ffffffad' }}
+                                        sx={{ color: '#332923' }}
                                     />
                                 </ListItemIcon>
                                 <ListItemText
-                                    primaryTypographyProps={{ color: '#ffffffad' }}
-                                    secondaryTypographyProps={{ color: '#ffffff67' }}
+                                    primaryTypographyProps={{ color: '#332923' }}
+                                    secondaryTypographyProps={{ color: '#706257' }}
                                     primary="Sapienza Università di Roma, Rome, Italie"
                                     secondary="I went to La Sapienza for 6 months to study computer science."
                                 />
@@ -63,12 +63,12 @@ const AboutCard: React.FC = () => {
                                 <ListItemIcon>
                                     <FiberManualRecordIcon
                                         fontSize="small"
-                                        sx={{ color: '#ffffffad' }}
+                                        sx={{ color: '#332923' }}
                                     />
                                 </ListItemIcon>
                                 <ListItemText
-                                    primaryTypographyProps={{ color: '#ffffffad' }}
-                                    secondaryTypographyProps={{ color: '#ffffff67' }}
+                                    primaryTypographyProps={{ color: '#332923' }}
+                                    secondaryTypographyProps={{ color: '#706257' }}
                                     primary="Polytech Paris-Saclay, Orsay, Paris"
                                     secondary="I chose the Computer Science specialty and I aim to work in the field of programming or cyber-security."
                                 />
@@ -79,8 +79,8 @@ const AboutCard: React.FC = () => {
 
                 <div className="about-card__section">
                     <div className="about-card__section-title">
-                        <IconContainer background="#18243a">
-                            <InterestsIcon sx={{ color: '#63a8ff' }} />
+                        <IconContainer background="#ded3c4">
+                            <InterestsIcon sx={{ color: '#b85c2b' }} />
                         </IconContainer>
                         <span>Interest</span>
                     </div>
@@ -90,26 +90,26 @@ const AboutCard: React.FC = () => {
                                 <ListItemIcon>
                                     <FitnessCenterIcon
                                         fontSize="small"
-                                        sx={{ color: '#ffffffad' }}
+                                        sx={{ color: '#332923' }}
                                     />
                                 </ListItemIcon>
                                 <ListItemText
-                                    primaryTypographyProps={{ color: '#ffffffad' }}
-                                    secondaryTypographyProps={{ color: '#ffffff67' }}
+                                    primaryTypographyProps={{ color: '#332923' }}
+                                    secondaryTypographyProps={{ color: '#706257' }}
                                     primary="Sports"
-                                    secondary="Tennis, gym"
+                                    secondary="hiking, gym"
                                 />
                             </ListItem>
                             <ListItem divider>
                                 <ListItemIcon>
                                     <QueryStatsIcon
                                         fontSize="small"
-                                        sx={{ color: '#ffffffad' }}
+                                        sx={{ color: '#332923' }}
                                     />
                                 </ListItemIcon>
                                 <ListItemText
-                                    primaryTypographyProps={{ color: '#ffffffad' }}
-                                    secondaryTypographyProps={{ color: '#ffffff67' }}
+                                    primaryTypographyProps={{ color: '#332923' }}
+                                    secondaryTypographyProps={{ color: '#706257' }}
                                     primary="Trading"
                                     secondary=""
                                 />
@@ -118,12 +118,12 @@ const AboutCard: React.FC = () => {
                                 <ListItemIcon>
                                     <ArticleIcon
                                         fontSize="small"
-                                        sx={{ color: '#ffffffad' }}
+                                        sx={{ color: '#332923' }}
                                     />
                                 </ListItemIcon>
                                 <ListItemText
-                                    primaryTypographyProps={{ color: '#ffffffad' }}
-                                    secondaryTypographyProps={{ color: '#ffffff67' }}
+                                    primaryTypographyProps={{ color: '#332923' }}
+                                    secondaryTypographyProps={{ color: '#706257' }}
                                     primary="Technology news"
                                 />
                             </ListItem>
@@ -131,12 +131,12 @@ const AboutCard: React.FC = () => {
                                 <ListItemIcon>
                                     <TravelExploreIcon
                                         fontSize="small"
-                                        sx={{ color: '#ffffffad' }}
+                                        sx={{ color: '#332923' }}
                                     />
                                 </ListItemIcon>
                                 <ListItemText
-                                    primaryTypographyProps={{ color: '#ffffffad' }}
-                                    secondaryTypographyProps={{ color: '#ffffff67' }}
+                                    primaryTypographyProps={{ color: '#332923' }}
+                                    secondaryTypographyProps={{ color: '#706257' }}
                                     primary="Cybersecurity"
                                 />
                             </ListItem>

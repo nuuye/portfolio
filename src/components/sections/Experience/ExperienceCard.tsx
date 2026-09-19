@@ -55,7 +55,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
             </div>
             
             <div className="experience-card__footer">
-                <IconLabelButtons Variant="outlined" textTransform="none" Color="white">
+                <IconLabelButtons Variant="outlined" textTransform="none" Color="#332923">
                     {duration}
                 </IconLabelButtons>
 
