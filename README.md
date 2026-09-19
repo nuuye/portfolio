@@ -4,10 +4,10 @@
 
 Welcome to my GitHub portfolio! Here, you'll find the projects I have worked on in web development.
 
-### 📌 About Me  
+### About Me  
 👋 I’m **Thomas Mostowfi**, a software engineer passionate about full-stack development and cybersecurity.
 
-### 🛠️ Technologies & Skills  
+### Technologies & Skills  
 - **Front-end**: JavaScript, React, Next.js
 - **Style libraries**: Material-UI, Ant Design, Chakra-UI
 - **Back-end**: Node.js, Express, Apex  
