@@ -38,8 +38,8 @@ const AboutCard: React.FC = () => {
             <div className="about-card__background">
                 <div className="about-card__section">
                     <div className="about-card__section-title">
-                        <IconContainer background="#373743">
-                            <SchoolIcon color="primary" />
+                        <IconContainer background="#202e47">
+                            <SchoolIcon sx={{ color: '#9ec5f8' }} />
                         </IconContainer>
                         <span>Education (Graduated in 2024)</span>
                     </div>
@@ -79,8 +79,8 @@ const AboutCard: React.FC = () => {
 
                 <div className="about-card__section">
                     <div className="about-card__section-title">
-                        <IconContainer background="#373743">
-                            <InterestsIcon sx={{ color: '#2b86ff' }} />
+                        <IconContainer background="#202e47">
+                            <InterestsIcon sx={{ color: '#9ec5f8' }} />
                         </IconContainer>
                         <span>Interest</span>
                     </div>
@@ -97,7 +97,7 @@ const AboutCard: React.FC = () => {
                                     primaryTypographyProps={{ color: '#ffffffad' }}
                                     secondaryTypographyProps={{ color: '#ffffff67' }}
                                     primary="Sports"
-                                    secondary="Tennis, gym"
+                                    secondary="hiking, gym"
                                 />
                             </ListItem>
                             <ListItem divider>

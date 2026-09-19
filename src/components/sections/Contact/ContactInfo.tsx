@@ -16,7 +16,7 @@ const customButtonStyle = {
     textAlign: 'left',
     borderRadius: 4,
     lineHeight: 1.4,
-    color: '#2b86ff',
+    color: '#9ec5f8',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -36,12 +36,12 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ icon, title, value }) => {
             PopperProps={{
                 sx: {
                     '.MuiTooltip-tooltip': {
-                        bgcolor: '#1976d2',
+                        bgcolor: '#6f9ed8',
                         fontSize: '12px',
                         padding: '5px 10px',
                     },
                     '.MuiTooltip-arrow': {
-                        color: '#1976d2',
+                        color: '#6f9ed8',
                     },
                 },
             }}
@@ -62,7 +62,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ icon, title, value }) => {
             title={copied ? 'Copied!' : 'Copy'}
         >
             <div className="contact-info" onClick={() => handleCopy()}>
-                <IconContainer background="#373743" size={45}>
+                <IconContainer background="#202e47" size={45}>
                     {icon}
                 </IconContainer>
                 <Button variant="text" sx={customButtonStyle}>

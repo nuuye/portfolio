@@ -18,6 +18,12 @@ const Skills: React.FC = () => {
         return activeCategory === categoryId;
     };
 
+    const activeCategoryLabel = skillCategories.find(
+        (category) => category.id === activeCategory
+    )?.label;
+
+    const activeSkills = getFilteredSkills();
+
     const handleCategoryChange = (categoryId: SkillCategory) => {
         if (categoryId === activeCategory) return;
 
@@ -41,28 +47,40 @@ const Skills: React.FC = () => {
 
             <div className="skills__container">
                 {/* Tabs */}
-                <div className="skills__tabs">
+                <div className="skills__tabs" role="tablist" aria-label="Skill categories">
                     {skillCategories.map((category) => (
-                        <div
+                        <button
+                            type="button"
+                            role="tab"
                             key={category.id}
+                            id={`skills-tab-${category.id}`}
+                            aria-selected={isCategoryActive(category.id)}
+                            aria-controls="skills-panel"
                             className={`skills__tab ${
                                 isCategoryActive(category.id) ? 'skills__tab--active' : ''
                             }`}
                             onClick={() => handleCategoryChange(category.id)}
                         >
-                            {category.label}
-                        </div>
+                            <span className="skills__tab-label">{category.label}</span>
+                        </button>
                     ))}
                 </div>
 
                 {/* Content */}
                 <div
+                    id="skills-panel"
+                    role="tabpanel"
+                    aria-labelledby={`skills-tab-${activeCategory}`}
                     className={`skills__content ${
                         isTransitioning ? 'skills__content--transitioning' : ''
                     }`}
                 >
+                    <div className="skills__content-header">
+                        <span>{activeCategoryLabel}</span>
+                        <span>{activeSkills.length} technologies</span>
+                    </div>
                     <div className="skills__icons">
-                        {getFilteredSkills().map((skill, index) => (
+                        {activeSkills.map((skill, index) => (
                             <SkillIcon
                                 key={skill.name}
                                 skill={skill}

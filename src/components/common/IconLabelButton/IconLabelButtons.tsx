@@ -39,8 +39,8 @@ export default function IconLabelButtons(props: IconLabelButtonsProps) {
                 sx={{
                     borderRadius: 4,
                     textTransform: textTransform,
-                    color: Color ? Color : '#2b86ff',
-                    borderColor: Color ? Color : '#2b86ff',
+                    color: Color ? Color : '#9ec5f8',
+                    borderColor: Color ? Color : '#9ec5f8',
                     fontWeight: bold ? 'bold' : 'normal',
                 }}
                 size={size ? size : 'small'}
