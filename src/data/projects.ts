@@ -93,4 +93,25 @@ export const projects: Project[] = [
         ],
         orientation: 'left',
     },
+    {
+        id: 'noteImprover',
+        title: 'Note Improver - Obsidian Plugin',
+        description: [
+            'Note Improver is an Obsidian plugin that uses LLMs to turn rough Markdown notes into clearer, better-structured documents while preserving the author’s writing style and intent.',
+            'The plugin analyses current note content, structure, and note type before proposing targeted improvements: spelling and formatting fixes, essential clarifications, internal Obsidian links, YAML aliases, and optional Mermaid diagrams when they add real value.',
+            'It supports cloud LLMs through Groq and local models through Ollama, with automatic backups and token-aware multi-model orchestration.',
+        ],
+        videoDesktop: '/videos/noteImproverDesktop.mp4',
+        videoMobile: '/videos/noteImproverMobile.mp4',
+        githubLink: 'https://github.com/nuuye/obsidian-agent-plugin',
+        technologies: [
+            'Obsidian Plugin',
+            'TypeScript',
+            'Groq API',
+            'Ollama', 
+            'LLM orchestration', 
+            'Markdown'
+        ],
+        orientation: 'right',
+    }
 ];

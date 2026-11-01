@@ -180,6 +180,9 @@
             @media (max-width: 730px) {
                 display: none;
             }
+            &--noteImprover {
+                border: 4px solid #9c8971 !important;
+            }
         }
 
         .project-card__video-mobile {
